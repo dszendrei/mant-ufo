@@ -79,48 +79,37 @@ function goUp() {
 function goto(slide) {
 //slide numbering is like array from 0 to total-1
   if (currentSlideNumber == 0) {
-    if (slide == 1) {
-      goDown();
-    } else if (slide == 2) {
-      goDown();
-      goDown();
-    } else if (slide == 3) {
-      goDown();
-      goDown();
-      goDown();
-    }
+    goToSlide(currentSlideNumber, slide)
   } else if (currentSlideNumber == 1) {
-    if (slide == 0) {
-      goUp();
-    } else if (slide == 2) {
-      goDown();
-    } else if (slide == 3) {
-      goDown();
-      goDown();
-    }
+    goToSlide(currentSlideNumber, slide)
   } else if (currentSlideNumber == 2) {
-    if (slide == 0) {
-      goUp();
-      goUp();
-    } else if (slide == 1) {
-      goUp();
-    } else if (slide == 3) {
-      goDown();
-    }
+    goToSlide(currentSlideNumber, slide)
   } else if (currentSlideNumber == 3) {
-    if (slide == 0) {
-      goUp();
-      goUp();
-      goUp();
-    } else if (slide == 1) {
-      goUp();
-      goUp();
-    } else if (slide == 2) {
-      goUp();
-    }
+    goToSlide(currentSlideNumber, slide)
+  } else if (currentSlideNumber == 4) {
+    goToSlide(currentSlideNumber, slide)
+  } else if (currentSlideNumber == 5) {
+    goToSlide(currentSlideNumber, slide)
+  } else if (currentSlideNumber == 6) {
+    goToSlide(currentSlideNumber, slide)
+  } else if (currentSlideNumber == 7) {
+    goToSlide(currentSlideNumber, slide)
   }
 
 }
+
+function goToSlide(currentSlideNumber, slide) {
+    if (currentSlideNumber<slide) {
+        for (let i = currentSlideNumber; i < slide; i++) {
+            goDown();
+        }
+    } else {
+        for (let i = slide; i < currentSlideNumber; i++) {
+            goUp();
+        }
+    }
+}
+
 // ------------- SET TIMEOUT TO TEMPORARILY "LOCK" SLIDES ------------- //
 function slideDurationTimeout(slideDuration) {
   setTimeout(function() {
