@@ -1,0 +1,23 @@
+{
+  "name": "MANT_PAGE",
+  "version": "0.1.0",
+  "description": "MANT UFO page",
+  "engines": {
+    "node": "10.x"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "ejs": "^2.5.6",
+    "express": "^4.15.2"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express",
+    "MANT"
+  ],
+  "license": "dszendrei"
+}
