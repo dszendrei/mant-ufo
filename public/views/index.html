@@ -5,26 +5,60 @@
 	<meta charset="UTF-8">
 	<title>MANT UFO</title>
 
-	<link rel="stylesheet" type="text/css" href="/stylesheets/index.css" />
 
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="/js/jquery.ba-throttle-debounce.js"></script>
 	<script src="/js/index.js" defer></script>
+
+  <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/stylesheets/index.css" />
+
+    <link rel="icon" href="/favicon.ico">
 </head>
 
 <body>
 
-<nav>
+<!--<nav>-->
+  <!--<ul>-->
+    <!--<li onclick="goto(0);">Slide1</li>-->
+    <!--<li onclick="goto(1);">Slide2</li>-->
+    <!--<li onclick="goto(2);">Slide3</li>-->
+    <!--<li onclick="goto(3);">Slide4</li>-->
+<!--</nav>-->
+
+
+<div>
+    <div class="fixed-action-btn click-to-toggle toolbar" style="height: 10ch">
+  <a class="btn-floating btn-large black">
+    <i class="large material-icons" style="font-size: 5ch">menu</i>
+  </a>
   <ul>
-    <li onclick="goto(0);">Slide1</li>
-    <li onclick="goto(1);">Slide2</li>
-    <li onclick="goto(2);">Slide3</li>
-</nav>
-<div class="container">
+    <li class="navlist" onclick="goto(0);">Slide1</li>
+    <li class="navlist" onclick="goto(1);">Slide2</li>
+    <li class="navlist" onclick="goto(2);">Slide3</li>
+    <li class="navlist" onclick="goto(3);">Slide4</li>
+  </ul>
+</div>
+
+
+
+<div class="container-parallax">
+
   <section class="background">
     <div class="content-wrapper">
-      <p class="content-title">Full Page Parallax Effect</p>
-      <p class="content-subtitle">Scroll down and up to see the effect!</p>
+      <p class="content-title">“Az űr minket nem elválaszt, pont hogy összeköt.”</p>
+      <p class="content-subtitle">Üdvözlünk csoportunk honlapján, amelyet a Magyar Asztronautikai Társaság űrfelsőoktatási munkacsoportja hozott létre azért, hogy Te, az űrtevékenységért rajongó érdeklődő minél több oktatáshoz kapcsolódó információhoz könnyen hozzájuss. Előadások, rakéta-indítási kísérletek, űrkutatási hírek és megannyi izgalmas aktualitás egy helyen, egy klassz közösséggel mögötte, akik mindenkit szívesen látnak.
+Munkacsoportunk missziója, hogy az űrtevékenység iránt érdeklődő fiataloknak segítsen megtalálni a céljaik valóra váltásához szükséges lehetőségeket, valamint támogassa az űrmérnök szak hazai megalapítását és elindítását. Az oktatas@mant.hu címen tudsz minket elérni.</p>
     </div>
   </section>
   <section class="background">
@@ -39,7 +73,13 @@
       <p class="content-subtitle">Nullam tristique urna sed tellus ornare congue. Etiam vitae erat at nibh aliquam dapibus.</p>
     </div>
   </section>
+  <section class="background">
+    <div class="content-wrapper">
+      <p class="content-title">Teszt plusz oldal mert több kéne</p>
+      <p class="content-subtitle">Lusta vagyok beírni tovább ezt a japán szöveget.</p>
+    </div>
+  </section>
 </div>
-
+</div>
 </body>
 </html>

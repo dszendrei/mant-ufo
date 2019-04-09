@@ -1,4 +1,15 @@
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.fixed-action-btn');
+    var instances = M.FloatingActionButton.init(elems, {
+      toolbarEnabled: true
+    });
+  });
 
+  // Or with jQuery
+
+  $('.fixed-action-btn').floatingActionButton({
+    toolbarEnabled: true
+  });
 
 // ------------- VARIABLES ------------- //
 var ticking = false;
@@ -73,11 +84,18 @@ function goto(slide) {
     } else if (slide == 2) {
       goDown();
       goDown();
+    } else if (slide == 3) {
+      goDown();
+      goDown();
+      goDown();
     }
   } else if (currentSlideNumber == 1) {
     if (slide == 0) {
       goUp();
     } else if (slide == 2) {
+      goDown();
+    } else if (slide == 3) {
+      goDown();
       goDown();
     }
   } else if (currentSlideNumber == 2) {
@@ -85,6 +103,19 @@ function goto(slide) {
       goUp();
       goUp();
     } else if (slide == 1) {
+      goUp();
+    } else if (slide == 3) {
+      goDown();
+    }
+  } else if (currentSlideNumber == 3) {
+    if (slide == 0) {
+      goUp();
+      goUp();
+      goUp();
+    } else if (slide == 1) {
+      goUp();
+      goUp();
+    } else if (slide == 2) {
       goUp();
     }
   }

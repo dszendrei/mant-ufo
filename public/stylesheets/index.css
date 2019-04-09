@@ -4,17 +4,17 @@ body {
     overflow: hidden;
 }
 
-nav {
-    position: fixed;
-    z-index: 999;
-    color: white;
-    left: 10px;
-}
+/*nav {*/
+    /*position: fixed;*/
+    /*z-index: 999;*/
+    /*color: white;*/
+    /*left: 10px;*/
+/*}*/
 
-nav ul li {
-    margin: 15px 0px;
-    cursor: pointer;
-}
+/*nav ul li {*/
+    /*margin: 15px 0px;*/
+    /*cursor: pointer;*/
+/*}*/
 
 .background {
     background-size: cover;
@@ -43,7 +43,7 @@ nav ul li {
 }
 
 .background:first-child {
-    background-image: url(https://3c1703fe8d.site.internapcdn.net/newman/gfx/news/hires/2018/space.jpg);
+    background-image: url(/front_page_slide01.jpg);
     transform: translateY(-15vh);
 }
 
@@ -52,23 +52,31 @@ nav ul li {
 }
 
 .background:nth-child(2) {
-    background-image: url(https://cdn.mos.cms.futurecdn.net/DDgWeDqb2h6SdaXajr7ak9.jpg);
+    background-image: url(/front_page_slide02.jpg);
 }
 
 .background:nth-child(3) {
-    background-image: url(https://www.ufointernationalproject.com/wp-content/uploads/2017/03/space-03-768x512.jpg);
+    background-image: url(/front_page_slide03.jpg);
+}
+
+.background:nth-child(4) {
+    background-image: url(/front_page_slide04.png);
 }
 
 /* Set stacking context of slides */
 .background:nth-child(1) {
-    z-index: 3;
+    z-index: 4;
 }
 
 .background:nth-child(2) {
-    z-index: 2;
+    z-index: 3;
 }
 
 .background:nth-child(3) {
+    z-index: 2;
+}
+
+.background:nth-child(4) {
     z-index: 1;
 }
 
@@ -88,7 +96,7 @@ nav ul li {
 }
 
 .content-title {
-    font-size: 12vh;
+    font-size: 8vh;
     line-height: 1.4;
 }
 
@@ -124,3 +132,13 @@ nav ul li {
     transform: translateY(15vh);
 }
 
+.navlist {
+    color: white;
+    line-height: 6ch;
+    font-size: 3ch;
+    border-right: solid #202020 1px;
+}
+
+.fixed-action-btn {
+    height: 20ch; !important
+}
