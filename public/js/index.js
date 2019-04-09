@@ -1,4 +1,5 @@
 // ------------- NAVBAR ------------- //
+var bodyDiv = document.getElementById('bodyDiv');
 var navCancel = document.getElementById("nav-cancel");
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.fixed-action-btn');
@@ -6,15 +7,24 @@ document.addEventListener('DOMContentLoaded', function() {
       toolbarEnabled: true
     });
     navCancel.style.display = "none";
+    bodyDiv.className = "nothing";
+
   });
 
 var navBtn = document.getElementById("nav-btn").addEventListener('click', function () {
-  if (navCancel.style.display == "none") navCancel.style.display = "block";
-  else navCancel.style.display = "none";
+  if (navCancel.style.display == "none") {
+    navCancel.style.display = "block";
+    bodyDiv.className = "stop-scrolling";
+  }
+  else {
+    navCancel.style.display = "none";
+    bodyDiv.className = "nothing";
+  }
 });
 
 navCancel.addEventListener('click', function () {
     navCancel.style.display = "none";
+    bodyDiv.className = "nothing";
 });
 
 // ------------- VARIABLES ------------- //
@@ -28,6 +38,7 @@ var totalSlideNumber = $(".background").length;
 
 // ------------- DETERMINE DELTA/SCROLL DIRECTION ------------- //
 function wheelScroll(evt) {
+  if (bodyDiv.className == 'stop-scrolling') return;
   if (isFirefox) {
     //Set delta for Firefox
     delta = evt.detail * (-120);
@@ -49,6 +60,7 @@ function wheelScroll(evt) {
 }
 
 function touchScroll(ts, te) {
+  if (bodyDiv.className == 'stop-scrolling') return;
   delta = te - ts;
   console.log('para');
   if (ticking != true) {

@@ -196,3 +196,12 @@ body {
     margin: 1.5em;
     z-index: 999;
 }
+
+.material-icons:hover {
+    color: darkgray;
+}
+
+.stop-scrolling {
+  height: 100% !important;
+  overflow: hidden !important;
+}
