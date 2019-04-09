@@ -1,15 +1,21 @@
+// ------------- NAVBAR ------------- //
+var navCancel = document.getElementById("nav-cancel");
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.fixed-action-btn');
     var instances = M.FloatingActionButton.init(elems, {
       toolbarEnabled: true
     });
+    navCancel.style.display = "none";
   });
 
-  // Or with jQuery
+var navBtn = document.getElementById("nav-btn").addEventListener('click', function () {
+  if (navCancel.style.display == "none") navCancel.style.display = "block";
+  else navCancel.style.display = "none";
+});
 
-  $('.fixed-action-btn').floatingActionButton({
-    toolbarEnabled: true
-  });
+navCancel.addEventListener('click', function () {
+    navCancel.style.display = "none";
+});
 
 // ------------- VARIABLES ------------- //
 var ticking = false;
