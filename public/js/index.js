@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   });
 
-var navBtn = document.getElementById("nav-btn").addEventListener('click', function () {
+document.getElementById("nav-btn").addEventListener('click', function () {
   if (navCancel.style.display == "none") {
     navCancel.style.display = "block";
     bodyDiv.className = "stop-scrolling";
@@ -21,6 +21,12 @@ var navBtn = document.getElementById("nav-btn").addEventListener('click', functi
     bodyDiv.className = "nothing";
   }
 });
+
+function preventBehavior(e) {
+    e.preventDefault();
+}
+
+document.addEventListener('touchmove', preventBehavior, {passive: false});
 
 navCancel.addEventListener('click', function () {
     navCancel.style.display = "none";
