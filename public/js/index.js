@@ -41,7 +41,7 @@ function wheelScroll(evt) {
   if (bodyDiv.className == 'stop-scrolling') return;
   if (isFirefox) {
     //Set delta for Firefox
-    delta = evt.detail * (-120);
+    delta = evt.detail * (-10);
   } else if (isIe) {
     //Set delta for IE
     delta = -evt.deltaY;
