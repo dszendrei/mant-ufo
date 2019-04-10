@@ -117,7 +117,6 @@ body {
     margin-right: auto;
     margin-left: auto;
     text-shadow: 2px 2px 3px black;
-    height: 100vh;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -130,6 +129,7 @@ body {
     backface-visibility: hidden;
     transition: all 1.7s cubic-bezier(0.22, 0.44, 0, 1);
     font-size: 1.6vmax;
+    height: 100vh;
 }
 
 .content-title {
@@ -172,10 +172,18 @@ body {
 
 .navlist {
     color: white;
-    font-size: 3vh;
-    height: auto;
+    font-size: 3.5vh;
+    height: auto !important;
     border-bottom: solid #202020 1px;
-    padding-top: 4vh;
+
+}
+
+.sibling-list-div {
+    height: 25%;
+}
+
+.child-list-div {
+    height: 50%;
 }
 
 .nav-ul {
@@ -217,7 +225,7 @@ body {
     margin-right: auto;
     display: block;
     margin-bottom: auto;
-    padding-bottom: 10vh;
+    padding-bottom: 10%;
 }
 
 .link-icon:hover {
