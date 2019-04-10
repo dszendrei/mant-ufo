@@ -187,8 +187,7 @@ body {
 }
 
 .content-subtitle {
-    margin-bottom: auto;
-    padding-bottom: 10vh;
+
 }
 
 #nav-cancel {
@@ -206,11 +205,20 @@ body {
     max-height:78px;
     width: auto;
     height: auto;
+    opacity: 1;
 }
 
 .link-icon {
+    color: white;
+    opacity: .8;
     padding-top: 2vmin;
     margin-left: auto;
     margin-right: auto;
     display: block;
+    margin-bottom: auto;
+    padding-bottom: 10vh;
+}
+
+.link-icon:hover {
+    color: darkgray;
 }
