@@ -5,6 +5,10 @@ body {
     line-height: unset;
 }
 
+p {
+    margin-top: 0;
+}
+
 /*nav {*/
     /*position: fixed;*/
     /*z-index: 999;*/
@@ -40,7 +44,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .background:first-child {
@@ -114,14 +118,13 @@ body {
 }
 
 .content-wrapper {
+    display: grid;
     width: 80%;
     margin-right: auto;
     margin-left: auto;
     text-shadow: 2px 2px 3px black;
-    display: flex;
     justify-content: center;
     text-align: center;
-    flex-flow: column nowrap;
     color: #fff;
     font-family: Montserrat;
     text-transform: uppercase;
@@ -130,7 +133,7 @@ body {
     backface-visibility: hidden;
     transition: all 1.7s cubic-bezier(0.22, 0.44, 0, 1);
     font-size: 1.6vmax;
-    height: 100%;
+    height: 100vh;
 }
 
 @media (min-width: 0px) {
@@ -147,7 +150,7 @@ body {
 
 @media (min-width: 600px) {
   .content-title {
-    font-size: 50px;
+    font-size: 47px;
   }
 }
 
@@ -170,8 +173,6 @@ body {
 }
 
 .content-title {
-    line-height: 1.4;
-    margin-top: -8%;
 }
 
 .background.up-scroll {
@@ -219,6 +220,7 @@ body {
 }
 
 .child-list-div {
+    margin: 0.5%;
     height: 50%;
 }
 
@@ -265,9 +267,14 @@ body {
 }
 
 .sibling-content {
-    margin: auto
+    height: auto;
 }
 
 .content-subtitle {
     font-size: 3.5vmin;
-  }
+}
+
+.slide-content {
+    height: auto;
+    margin: auto;
+}
