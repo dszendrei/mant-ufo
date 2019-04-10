@@ -2,6 +2,7 @@
 html,
 body {
     overflow: hidden;
+    line-height: unset;
 }
 
 /*nav {*/
@@ -132,8 +133,43 @@ body {
     height: 100%;
 }
 
+@media (min-width: 0px) {
+  .content-title {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 400px) {
+  .content-title {
+    font-size: 40px;
+  }
+}
+
+@media (min-width: 600px) {
+  .content-title {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 900px) {
+  .content-title {
+    font-size: 55px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .content-title {
+    font-size: 60px;
+  }
+}
+
+@media (min-width: 2000px) {
+  .content-title {
+    font-size: 65px;
+  }
+}
+
 .content-title {
-    font-size: 2.5ch;
     line-height: 1.4;
     margin-top: -8%;
 }
@@ -195,10 +231,6 @@ body {
     cursor: pointer;
 }
 
-.content-subtitle {
-    font-size: 1.2em;
-}
-
 #nav-cancel {
     float: right;
     margin: 1.5em;
@@ -235,3 +267,7 @@ body {
 .sibling-content {
     margin: auto
 }
+
+.content-subtitle {
+    font-size: 3.5vmin;
+  }
