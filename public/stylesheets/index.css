@@ -23,7 +23,7 @@ body {
     overflow: hidden;
     will-change: transform;
     backface-visibility: hidden;
-    height: 130vh;
+    height: 130%;
     position: fixed;
     width: 100%;
     transform: translateY(30vh);
@@ -129,13 +129,13 @@ body {
     backface-visibility: hidden;
     transition: all 1.7s cubic-bezier(0.22, 0.44, 0, 1);
     font-size: 1.6vmax;
-    height: 100vh;
+    height: 100%;
 }
 
 .content-title {
     font-size: 2.5ch;
     line-height: 1.4;
-    margin-top: auto;
+    margin-top: -8%;
 }
 
 .background.up-scroll {
@@ -230,4 +230,8 @@ body {
 
 .link-icon:hover {
     color: darkgray;
+}
+
+.sibling-content {
+    margin: auto
 }
