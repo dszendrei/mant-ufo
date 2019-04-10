@@ -60,7 +60,7 @@ body {
 }
 
 .background:nth-child(4) {
-    background-image: url(/front_page_slide04.png);
+    background-image: url(/front_page_slide04.jpg);
 }
 
 .background:nth-child(5) {
@@ -76,7 +76,7 @@ body {
 }
 
 .background:nth-child(8) {
-    background-image: url(/front_page_slide08.png);
+    background-image: url(/front_page_slide08.jpg);
 }
 
 /* Set stacking context of slides */
@@ -187,7 +187,7 @@ body {
 }
 
 .content-subtitle {
-
+    font-size: 1.2em;
 }
 
 #nav-cancel {
