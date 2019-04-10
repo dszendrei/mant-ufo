@@ -13,10 +13,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.getElementById("nav-btn").addEventListener('click', function () {
   if (navCancel.style.display == "none") {
+    document.getElementById("nav-btn").style.height = "100%";
+    document.getElementById("nav-btn").style.top = "0";
     navCancel.style.display = "block";
     bodyDiv.className = "stop-scrolling";
   }
   else {
+    document.getElementById("nav-btn").style.height = "";
+    document.getElementById("nav-btn").style.top = "23px";
     navCancel.style.display = "none";
     bodyDiv.className = "nothing";
   }
@@ -29,6 +33,8 @@ function preventBehavior(e) {
 document.addEventListener('touchmove', preventBehavior, {passive: false});
 
 navCancel.addEventListener('click', function () {
+    document.getElementById("nav-btn").style.height = "";
+    document.getElementById("nav-btn").style.top = "23px";
     navCancel.style.display = "none";
     bodyDiv.className = "nothing";
 });

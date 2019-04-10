@@ -233,6 +233,12 @@ p {
     cursor: pointer;
 }
 
+#nav-btn {
+    bottom: unset;
+    top: 23px;
+    opacity: .8%;
+}
+
 #nav-cancel {
     float: right;
     margin: 1.5em;
@@ -253,13 +259,12 @@ p {
 
 .link-icon {
     color: white;
-    opacity: .8;
+    opacity: .9;
     padding-top: 2vmin;
     margin-left: auto;
     margin-right: auto;
     display: block;
     margin-bottom: auto;
-    padding-bottom: 10%;
 }
 
 .link-icon:hover {
