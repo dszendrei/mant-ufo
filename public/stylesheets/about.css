@@ -117,6 +117,12 @@ body {
     margin-bottom: 0;
 }
 
+.card {
+    -webkit-border-radius: 10px 10px 8px 8px;
+    -moz-border-radius: 10px 10px 8px 8px;
+    border-radius: 10px 10px 8px 8px;
+}
+
 .card-content {
     min-height: 160px;
 }
@@ -125,6 +131,12 @@ body {
     display: inline !important;
     vertical-align: middle !important;
     line-height: 36px !important;
+}
+
+.card .card-image img {
+    -webkit-border-radius: 8px 8px 0 0;
+    -moz-border-radius: 8px 8px 0 0;
+    border-radius: 8px 8px 0 0;
 }
 
 .email-icon, .short-description {
