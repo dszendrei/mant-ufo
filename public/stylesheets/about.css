@@ -14,30 +14,51 @@ body {
   .content-title {
     font-size: 30px;
   }
+    .card .card-title {
+        font-size: 40px;
+        line-height: 48px !important;
+    }
 }
 
 @media (min-width: 400px) {
   .content-title {
     font-size: 40px;
   }
+  .card .card-title {
+      font-size: 40px;
+      line-height: 48px !important;
+    }
 }
 
 @media (min-width: 600px) {
   .content-title {
     font-size: 47px;
   }
+    .card .card-title {
+        font-size: 40px;
+        line-height: 48px !important;
+    }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 993px) {
   .content-title {
     font-size: 55px;
   }
+
+  .card .card-title {
+      font-size: 24px;
+      line-height: 36px !important;
+    }
 }
 
 @media (min-width: 1400px) {
   .content-title {
     font-size: 60px;
   }
+    .card .card-title {
+      font-size: 24px;
+      line-height: 36px !important;
+    }
 }
 
 @media (min-width: 2000px) {
@@ -127,10 +148,9 @@ body {
     min-height: 160px;
 }
 
-.card-title {
+.card .card-title {
     display: inline !important;
     vertical-align: middle !important;
-    line-height: 36px !important;
 }
 
 .card .card-image img {
@@ -152,5 +172,5 @@ body {
 .email-and-description {
     margin-top: 20px;
     color: cadetblue;
-    font-size: 1.6vmax;
+    font-size: 24px;
 }
