@@ -1,6 +1,5 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var babel = require("@babel/core");
 
 var fs = require("fs");
 var browserify = require("browserify");
