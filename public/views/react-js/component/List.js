@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import Header from "./Header";
-import {Col, Preloader, Input, Row, Button, Card} from 'react-materialize'
 
 class List extends Component {
 

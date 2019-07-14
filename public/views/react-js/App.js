@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import HomeCard from "./component/HomeCard";
 import List from "./component/List"
-import {Row, Col, Card, CardTitle, Icon} from 'react-materialize';
 import Iframe from 'react-iframe';
 
 class App extends Component {
 
     render() {
         return (
-        <Row>
+        <div className="row">
             <HomeCard title="Registration" content="Easy to join, hard to leave!" icon='check_circle_outline'></HomeCard>
             <HomeCard title="Login" content="With email or username" icon='check_circle_outline'></HomeCard>
             <HomeCard title="Contact us" content="For more information or guiding!" icon='check_circle_outline'></HomeCard>
@@ -17,7 +16,7 @@ class App extends Component {
                     width="100%"
                     height="1000px"
             ></Iframe>
-        </Row>
+        </div>
         )
     }
 }
