@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Header from "./Header";
 import {Col, Preloader, Input, Row, Button, Card} from 'react-materialize'
 
 class List extends Component {
@@ -9,7 +10,11 @@ class List extends Component {
         this.state = {
           worksheetName: '',
           range: '',
-          data: ''
+          data: {
+            sheetName: '',
+            headers: [],
+            listOfRows: []
+          }
         };
     }
 
@@ -17,9 +22,8 @@ class List extends Component {
         fetch('https://mantufo-lists.herokuapp.com/lists/tantargyak_itthon/A1:G100')
             .then(response => response.json())
             .then(data => {
-                if(this._isMounted) {
                     this.setState({data})
-                }});
+                });
     }
 
     render() {
@@ -48,7 +52,11 @@ class List extends Component {
         return (
 
             <div>
-            <p>{this.state.data}</p>
+            <h1>{this.state.data.sheetName}</h1>
+            <p></p>
+            {this.state.data.headers.map((header, i) =>
+                <Header key={i} data={header}>{header}</Header>
+            )}
             </div>
         );
     }
