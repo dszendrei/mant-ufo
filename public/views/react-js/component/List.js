@@ -7,18 +7,20 @@ class List extends Component {
         super(props);
 
         this.state = {
+            displayName: props.displayName,
             worksheetName: props.worksheetName,
             range: props.range,
             data: {
                 sheetName: '',
                 headers: [],
                 listOfRows: []
-            }
+            },
+            fetchState: false
         };
     }
 
     componentDidMount() {
-
+        //fetch('http://localhost:8080/lists/' + this.state.worksheetName + '/' + this.state.range)
         fetch('https://mantufo-lists.herokuapp.com/lists/' + this.state.worksheetName + '/' + this.state.range)
             .then(response => response.json())
             .then(data => {
@@ -26,18 +28,32 @@ class List extends Component {
             });
     }
 
-    render() {
+    componentDidUpdate(prevProps, prevState) {
+        if (prevState.data.headers !== this.state.data.headers) {
+            this.setState({ fetchState: true });
+        }
+    }
 
-        return (
-            <li>
-                <div className="collapsible-header">
-                    {this.state.data.sheetName}
-                </div>
+    render() {
+        let sheet;
+
+        if (!this.state.fetchState) {
+            sheet = <div className="collapsible-body">Loading...</div>
+        } else {
+            sheet =
                 <div className="collapsible-body">
                     {this.state.data.headers.map((header, i) =>
                         <Header key={i} data={header}>{header}</Header>
                     )}
                 </div>
+        }
+
+        return (
+            <li>
+                <div className="collapsible-header">
+                    {this.state.displayName}
+                </div>
+                {sheet}
             </li>
         );
     }

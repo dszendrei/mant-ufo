@@ -3,8 +3,6 @@ import HomeCard from "./component/HomeCard";
 import ListContainer from "./component/ListContainer"
 import Iframe from 'react-iframe';
 
-const M = window.M;
-
 class App extends Component {
 
     render() {

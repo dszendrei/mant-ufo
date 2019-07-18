@@ -25216,8 +25216,6 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _HomeCard = _interopRequireDefault(require("./component/HomeCard"));
 
-var _List = _interopRequireDefault(require("./component/List"));
-
 var _ListContainer = _interopRequireDefault(require("./component/ListContainer"));
 
 var _reactIframe = _interopRequireDefault(require("react-iframe"));
@@ -25282,7 +25280,7 @@ function (_Component) {
 var _default = App;
 exports["default"] = _default;
 
-},{"./component/HomeCard":20,"./component/List":21,"./component/ListContainer":22,"react":11,"react-iframe":8}],19:[function(require,module,exports){
+},{"./component/HomeCard":20,"./component/ListContainer":22,"react":11,"react-iframe":8}],19:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25332,17 +25330,6 @@ function (_Component) {
         margin: '4px',
         boxShadow: '0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2)'
       };
-
-      if (this.props.data === undefined) {
-        return _react["default"].createElement("div", null, _react["default"].createElement("div", {
-          className: "center-align"
-        }, _react["default"].createElement("h4", null, "Server is loading..."), _react["default"].createElement(Col, {
-          s: 4
-        }, _react["default"].createElement(Preloader, {
-          flashing: true
-        }))));
-      }
-
       return _react["default"].createElement("span", null, " ", this.props.data.value, " ");
     }
   }]);
@@ -25463,13 +25450,15 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(List).call(this, props));
     _this.state = {
+      displayName: props.displayName,
       worksheetName: props.worksheetName,
       range: props.range,
       data: {
         sheetName: '',
         headers: [],
         listOfRows: []
-      }
+      },
+      fetchState: false
     };
     return _this;
   }
@@ -25479,6 +25468,7 @@ function (_Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
+      //fetch('http://localhost:8080/lists/' + this.state.worksheetName + '/' + this.state.range)
       fetch('https://mantufo-lists.herokuapp.com/lists/' + this.state.worksheetName + '/' + this.state.range).then(function (response) {
         return response.json();
       }).then(function (data) {
@@ -25488,18 +25478,37 @@ function (_Component) {
       });
     }
   }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps, prevState) {
+      if (prevState.data.headers !== this.state.data.headers) {
+        this.setState({
+          fetchState: true
+        });
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
+      var sheet;
+
+      if (!this.state.fetchState) {
+        sheet = _react["default"].createElement("div", {
+          className: "collapsible-body"
+        }, "Loading");
+      } else {
+        sheet = _react["default"].createElement("div", {
+          className: "collapsible-body"
+        }, this.state.data.headers.map(function (header, i) {
+          return _react["default"].createElement(_Header["default"], {
+            key: i,
+            data: header
+          }, header);
+        }));
+      }
+
       return _react["default"].createElement("li", null, _react["default"].createElement("div", {
         className: "collapsible-header"
-      }, this.state.data.sheetName), _react["default"].createElement("div", {
-        className: "collapsible-body"
-      }, this.state.data.headers.map(function (header, i) {
-        return _react["default"].createElement(_Header["default"], {
-          key: i,
-          data: header
-        }, header);
-      })));
+      }, this.state.displayName), sheet);
     }
   }]);
 
@@ -25563,23 +25572,49 @@ function (_Component) {
     key: "render",
     value: function render() {
       var worksheetNamesAndRanges = {
-        tantargyak_itthon: "A1:G100",
-        szakok: "A1:G100",
-        versenyek: "A1:G100",
-        europai_diplomak: "A1:G100",
-        esemenyek: "A1:G100",
-        kutatocsoportok_es_cegek: "A1:G100",
-        partnerek: "A1:G100",
-        eddigi_megjeleneseink: "A1:G100"
+        tantargyak_itthon: {
+          name: "Tantárgyak itthon",
+          range: "A1:G100"
+        },
+        szakok: {
+          name: "Szakok",
+          range: "A1:G100"
+        },
+        versenyek: {
+          name: "Versenyek",
+          range: "A1:G100"
+        },
+        europai_diplomak: {
+          name: "Európai diplomák",
+          range: "A1:G100"
+        },
+        esemenyek: {
+          name: "Események, MOOC",
+          range: "A1:G100"
+        },
+        kutatocsoportok_es_cegek: {
+          name: "Kutatócsoportok és cégek",
+          range: "A1:G100"
+        },
+        partnerek: {
+          name: "Partnerek",
+          range: "A1:G100"
+        },
+        eddigi_megjeleneseink: {
+          name: "Eddigi megjelenéseink",
+          range: "A1:G100"
+        }
       };
       return _react["default"].createElement("ul", {
         className: "collapsible"
       }, Object.keys(worksheetNamesAndRanges).map(function (worksheetName, i) {
+        var workSheet = worksheetNamesAndRanges[worksheetName];
         return _react["default"].createElement(_List["default"], {
           className: "collapsible-element",
           key: i,
           worksheetName: worksheetName,
-          range: worksheetNamesAndRanges[worksheetName]
+          displayName: workSheet.name,
+          range: workSheet.range
         });
       }));
     }
