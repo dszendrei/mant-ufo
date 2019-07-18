@@ -25490,29 +25490,16 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var style = {
-        borderRadius: '1px',
-        padding: '10px',
-        margin: '4px',
-        boxShadow: '0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2)'
-      };
-
-      if (this.state.data === undefined) {
-        return _react["default"].createElement("div", null, _react["default"].createElement("div", {
-          className: "center-align"
-        }, _react["default"].createElement("h4", null, "Server is loading..."), _react["default"].createElement(Col, {
-          s: 4
-        }, _react["default"].createElement(Preloader, {
-          flashing: true
-        }))));
-      }
-
-      return _react["default"].createElement("div", null, _react["default"].createElement("h1", null, this.state.data.sheetName), _react["default"].createElement("p", null), this.state.data.headers.map(function (header, i) {
+      return _react["default"].createElement("li", null, _react["default"].createElement("div", {
+        className: "collapsible-header"
+      }, this.state.data.sheetName), _react["default"].createElement("div", {
+        className: "collapsible-body"
+      }, this.state.data.headers.map(function (header, i) {
         return _react["default"].createElement(_Header["default"], {
           key: i,
           data: header
         }, header);
-      }));
+      })));
     }
   }]);
 
@@ -25568,6 +25555,11 @@ function (_Component) {
   }
 
   _createClass(ListContainer, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      M.Collapsible.init(document.querySelectorAll('.collapsible'));
+    }
+  }, {
     key: "render",
     value: function render() {
       var worksheetNamesAndRanges = {
@@ -25580,8 +25572,11 @@ function (_Component) {
         partnerek: "A1:G100",
         eddigi_megjeleneseink: "A1:G100"
       };
-      return _react["default"].createElement("div", null, Object.keys(worksheetNamesAndRanges).map(function (worksheetName, i) {
+      return _react["default"].createElement("ul", {
+        className: "collapsible"
+      }, Object.keys(worksheetNamesAndRanges).map(function (worksheetName, i) {
         return _react["default"].createElement(_List["default"], {
+          className: "collapsible-element",
           key: i,
           worksheetName: worksheetName,
           range: worksheetNamesAndRanges[worksheetName]

@@ -7,6 +7,11 @@ class ListContainer extends Component {
         super(props);
     }
 
+    componentDidMount() {
+        M.Collapsible.init(document.querySelectorAll('.collapsible'));
+    }
+    
+    
     render() {
 
         const worksheetNamesAndRanges = {
@@ -21,13 +26,13 @@ class ListContainer extends Component {
         }
 
         return (
-            <div>
-            {Object.keys(worksheetNamesAndRanges).map((worksheetName, i) => {
-                return (
-                    <List key={i} worksheetName={worksheetName} range={worksheetNamesAndRanges[worksheetName]}></List>
-                )
-            })}
-            </div>
+            <ul className="collapsible">
+                {Object.keys(worksheetNamesAndRanges).map((worksheetName, i) => {
+                    return (
+                        <List className='collapsible-element' key={i} worksheetName={worksheetName} range={worksheetNamesAndRanges[worksheetName]}></List>
+                    )
+                })}
+            </ul>
         )
 
     }
