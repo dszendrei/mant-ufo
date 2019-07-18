@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import List from './List';
 
 class ListContainer extends Component {
@@ -10,8 +10,7 @@ class ListContainer extends Component {
     componentDidMount() {
         M.Collapsible.init(document.querySelectorAll('.collapsible'));
     }
-    
-    
+
     render() {
 
         const worksheetNamesAndRanges = {
@@ -34,9 +33,7 @@ class ListContainer extends Component {
                 })}
             </ul>
         )
-
     }
-
 }
 
 export default ListContainer;
