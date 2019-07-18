@@ -7,8 +7,8 @@ class List extends Component {
         super(props);
 
         this.state = {
-          worksheetName: '',
-          range: '',
+          worksheetName: props.worksheetName,
+          range: props.range,
           data: {
             sheetName: '',
             headers: [],
@@ -18,7 +18,7 @@ class List extends Component {
     }
 
     componentDidMount() {
-        fetch('https://mantufo-lists.herokuapp.com/lists/tantargyak_itthon/A1:G100')
+        fetch('https://mantufo-lists.herokuapp.com/lists/' + this.state.worksheetName + '/' + this.state.range)
             .then(response => response.json())
             .then(data => {
                     this.setState({data})

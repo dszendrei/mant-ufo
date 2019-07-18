@@ -25218,6 +25218,8 @@ var _HomeCard = _interopRequireDefault(require("./component/HomeCard"));
 
 var _List = _interopRequireDefault(require("./component/List"));
 
+var _ListContainer = _interopRequireDefault(require("./component/ListContainer"));
+
 var _reactIframe = _interopRequireDefault(require("react-iframe"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -25270,14 +25272,7 @@ function (_Component) {
         title: "Contact us",
         content: "For more information or guiding!",
         icon: "check_circle_outline"
-      }), _react["default"].createElement(_List["default"], {
-        worksheetName: "tantargyak_itthon",
-        range: "A1:G100"
-      }), _react["default"].createElement(_reactIframe["default"], {
-        url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRDZUKlaVTaYj9uaOdULwCIy6HtB3vnIcMj6KaQc6kMP17VS2-e2XNgMPgxk0NaWFpalP1fLGkQxH4t/pubhtml?widget=true&headers=false",
-        width: "100%",
-        height: "1000px"
-      }));
+      }), _react["default"].createElement(_ListContainer["default"], null));
     }
   }]);
 
@@ -25287,7 +25282,7 @@ function (_Component) {
 var _default = App;
 exports["default"] = _default;
 
-},{"./component/HomeCard":20,"./component/List":21,"react":11,"react-iframe":8}],19:[function(require,module,exports){
+},{"./component/HomeCard":20,"./component/List":21,"./component/ListContainer":22,"react":11,"react-iframe":8}],19:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25468,8 +25463,8 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(List).call(this, props));
     _this.state = {
-      worksheetName: '',
-      range: '',
+      worksheetName: props.worksheetName,
+      range: props.range,
       data: {
         sheetName: '',
         headers: [],
@@ -25484,11 +25479,9 @@ function (_Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      fetch('https://mantufo-lists.herokuapp.com/lists/tantargyak_itthon/A1:G100').then(function (response) {
+      fetch('https://mantufo-lists.herokuapp.com/lists/' + this.state.worksheetName + '/' + this.state.range).then(function (response) {
         return response.json();
       }).then(function (data) {
-        console.log("api_reached");
-
         _this2.setState({
           data: data
         });
@@ -25532,6 +25525,80 @@ exports["default"] = _default;
 },{"./Header":19,"react":11}],22:[function(require,module,exports){
 "use strict";
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _List = _interopRequireDefault(require("./List"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+var ListContainer =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(ListContainer, _Component);
+
+  function ListContainer(props) {
+    _classCallCheck(this, ListContainer);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(ListContainer).call(this, props));
+  }
+
+  _createClass(ListContainer, [{
+    key: "render",
+    value: function render() {
+      var worksheetNamesAndRanges = {
+        tantargyak_itthon: "A1:G100",
+        szakok: "A1:G100",
+        versenyek: "A1:G100",
+        europai_diplomak: "A1:G100",
+        esemenyek: "A1:G100",
+        kutatocsoportok_es_cegek: "A1:G100",
+        partnerek: "A1:G100",
+        eddigi_megjeleneseink: "A1:G100"
+      };
+      return _react["default"].createElement("div", null, Object.keys(worksheetNamesAndRanges).map(function (worksheetName, i) {
+        return _react["default"].createElement(_List["default"], {
+          key: i,
+          worksheetName: worksheetName,
+          range: worksheetNamesAndRanges[worksheetName]
+        });
+      }));
+    }
+  }]);
+
+  return ListContainer;
+}(_react.Component);
+
+var _default = ListContainer;
+exports["default"] = _default;
+
+},{"./List":21,"react":11}],23:[function(require,module,exports){
+"use strict";
+
 var _react = _interopRequireDefault(require("react"));
 
 var _reactDom = _interopRequireDefault(require("react-dom"));
@@ -25551,7 +25618,7 @@ _reactDom["default"].render(_react["default"].createElement(_App["default"], nul
 
 serviceWorker.unregister();
 
-},{"./App":18,"./serviceWorker":23,"react":11,"react-dom":7}],23:[function(require,module,exports){
+},{"./App":18,"./serviceWorker":24,"react":11,"react-dom":7}],24:[function(require,module,exports){
 (function (process){
 "use strict";
 
@@ -25673,4 +25740,4 @@ function unregister() {
 }
 
 }).call(this,require('_process'))
-},{"_process":2}]},{},[22]);
+},{"_process":2}]},{},[23]);
