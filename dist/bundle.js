@@ -25316,15 +25316,33 @@ function (_Component) {
   _inherits(Header, _Component);
 
   function Header(props) {
+    var _this;
+
     _classCallCheck(this, Header);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Header).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Header).call(this, props));
+    _this.state = {
+      valueString: _this.props.data.value
+    };
+    return _this;
   }
 
   _createClass(Header, [{
     key: "render",
     value: function render() {
-      return _react["default"].createElement("td", null, " ", this.props.data.value, " ");
+      var value;
+      var urlRegex = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+
+      if (this.state.valueString.match(urlRegex) != null) {
+        value = _react["default"].createElement("td", null, _react["default"].createElement("a", {
+          target: "_blank",
+          href: this.state.valueString
+        }, " LINK "));
+      } else {
+        value = _react["default"].createElement("td", null, " ", this.state.valueString, " ");
+      }
+
+      return value;
     }
   }]);
 

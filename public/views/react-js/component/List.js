@@ -55,7 +55,8 @@ class List extends Component {
                             {this.state.data.listOfRows.map((row) =>
                                 <tr key={row.index + "_row"}>
                                     {row.listOfCells.map((cell) =>
-                                        <Cell key={row.index + "_" + cell.coordinate.sheetsFormattedCoordinate} data={cell}>{cell}</Cell>
+                                        <Cell key={row.index + "_" + cell.coordinate.sheetsFormattedCoordinate}
+                                            data={cell}>{cell}</Cell>
                                     )}
                                 </tr>
                             )}
