@@ -25280,7 +25280,61 @@ function (_Component) {
 var _default = App;
 exports["default"] = _default;
 
-},{"./component/HomeCard":20,"./component/ListContainer":22,"react":11,"react-iframe":8}],19:[function(require,module,exports){
+},{"./component/HomeCard":21,"./component/ListContainer":23,"react":11,"react-iframe":8}],19:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+var Header =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Header, _Component);
+
+  function Header(props) {
+    _classCallCheck(this, Header);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Header).call(this, props));
+  }
+
+  _createClass(Header, [{
+    key: "render",
+    value: function render() {
+      return _react["default"].createElement("td", null, " ", this.props.data.value, " ");
+    }
+  }]);
+
+  return Header;
+}(_react.Component);
+
+var _default = Header;
+exports["default"] = _default;
+
+},{"react":11}],20:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25330,7 +25384,7 @@ function (_Component) {
         margin: '4px',
         boxShadow: '0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2)'
       };
-      return _react["default"].createElement("span", null, " ", this.props.data.value, " ");
+      return _react["default"].createElement("th", null, " ", this.props.data.value, " ");
     }
   }]);
 
@@ -25340,7 +25394,7 @@ function (_Component) {
 var _default = Header;
 exports["default"] = _default;
 
-},{"react":11}],20:[function(require,module,exports){
+},{"react":11}],21:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25404,7 +25458,7 @@ function (_Component) {
 var _default = HomeCard;
 exports["default"] = _default;
 
-},{"react":11}],21:[function(require,module,exports){
+},{"react":11}],22:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25415,6 +25469,8 @@ exports["default"] = void 0;
 var _react = _interopRequireWildcard(require("react"));
 
 var _Header = _interopRequireDefault(require("./Header"));
+
+var _Cell = _interopRequireDefault(require("./Cell"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -25494,16 +25550,27 @@ function (_Component) {
       if (!this.state.fetchState) {
         sheet = _react["default"].createElement("div", {
           className: "collapsible-body"
-        }, "Loading");
+        }, "Loading...");
       } else {
         sheet = _react["default"].createElement("div", {
           className: "collapsible-body"
-        }, this.state.data.headers.map(function (header, i) {
+        }, _react["default"].createElement("table", {
+          className: "stripped"
+        }, _react["default"].createElement("thead", null, _react["default"].createElement("tr", null, this.state.data.headers.map(function (header, i) {
           return _react["default"].createElement(_Header["default"], {
-            key: i,
+            key: i + "_header",
             data: header
           }, header);
-        }));
+        }))), _react["default"].createElement("tbody", null, this.state.data.listOfRows.map(function (row) {
+          return _react["default"].createElement("tr", {
+            key: row.index + "_row"
+          }, row.listOfCells.map(function (cell) {
+            return _react["default"].createElement(_Cell["default"], {
+              key: row.index + "_" + cell.coordinate.sheetsFormattedCoordinate,
+              data: cell
+            }, cell);
+          }));
+        }))));
       }
 
       return _react["default"].createElement("li", null, _react["default"].createElement("div", {
@@ -25518,7 +25585,7 @@ function (_Component) {
 var _default = List;
 exports["default"] = _default;
 
-},{"./Header":19,"react":11}],22:[function(require,module,exports){
+},{"./Cell":19,"./Header":20,"react":11}],23:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25626,7 +25693,7 @@ function (_Component) {
 var _default = ListContainer;
 exports["default"] = _default;
 
-},{"./List":21,"react":11}],23:[function(require,module,exports){
+},{"./List":22,"react":11}],24:[function(require,module,exports){
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -25648,7 +25715,7 @@ _reactDom["default"].render(_react["default"].createElement(_App["default"], nul
 
 serviceWorker.unregister();
 
-},{"./App":18,"./serviceWorker":24,"react":11,"react-dom":7}],24:[function(require,module,exports){
+},{"./App":18,"./serviceWorker":25,"react":11,"react-dom":7}],25:[function(require,module,exports){
 (function (process){
 "use strict";
 
@@ -25770,4 +25837,4 @@ function unregister() {
 }
 
 }).call(this,require('_process'))
-},{"_process":2}]},{},[23]);
+},{"_process":2}]},{},[24]);

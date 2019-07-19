@@ -16,7 +16,7 @@ class Header extends Component {
         };
 
         return (
-            <span> {this.props.data.value} </span>
+            <th> {this.props.data.value} </th>
         )
     }
 }

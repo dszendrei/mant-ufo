@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from "./Header";
+import Cell from "./Cell";
 
 class List extends Component {
 
@@ -42,9 +43,24 @@ class List extends Component {
         } else {
             sheet =
                 <div className="collapsible-body">
-                    {this.state.data.headers.map((header, i) =>
-                        <Header key={i} data={header}>{header}</Header>
-                    )}
+                    <table className="stripped">
+                        <thead>
+                            <tr>
+                                {this.state.data.headers.map((header, i) =>
+                                    <Header key={i + "_header"} data={header}>{header}</Header>
+                                )}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {this.state.data.listOfRows.map((row) =>
+                                <tr key={row.index + "_row"}>
+                                    {row.listOfCells.map((cell) =>
+                                        <Cell key={row.index + "_" + cell.coordinate.sheetsFormattedCoordinate} data={cell}>{cell}</Cell>
+                                    )}
+                                </tr>
+                            )}
+                        </tbody>
+                    </table>
                 </div>
         }
 
