@@ -10,6 +10,7 @@ class List extends Component {
         this.state = {
             displayName: props.displayName,
             worksheetName: props.worksheetName,
+            color: props.color,
             range: props.range,
             data: {
                 sheetName: '',
@@ -43,9 +44,9 @@ class List extends Component {
         } else {
             sheet =
                 <div className="collapsible-body">
-                    <table className="stripped">
+                    <table className="striped">
                         <thead>
-                            <tr>
+                            <tr className={this.state.color}>
                                 {this.state.data.headers.map((header, i) =>
                                     <Header key={i + "_header"} data={header}>{header}</Header>
                                 )}
@@ -67,7 +68,7 @@ class List extends Component {
 
         return (
             <li>
-                <div className="collapsible-header">
+                <div className={`${this.state.color} collapsible-header`}>
                     {this.state.displayName}
                 </div>
                 {sheet}

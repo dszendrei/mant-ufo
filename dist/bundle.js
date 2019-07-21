@@ -25526,6 +25526,7 @@ function (_Component) {
     _this.state = {
       displayName: props.displayName,
       worksheetName: props.worksheetName,
+      color: props.color,
       range: props.range,
       data: {
         sheetName: '',
@@ -25573,8 +25574,10 @@ function (_Component) {
         sheet = _react["default"].createElement("div", {
           className: "collapsible-body"
         }, _react["default"].createElement("table", {
-          className: "stripped"
-        }, _react["default"].createElement("thead", null, _react["default"].createElement("tr", null, this.state.data.headers.map(function (header, i) {
+          className: "striped"
+        }, _react["default"].createElement("thead", null, _react["default"].createElement("tr", {
+          className: this.state.color
+        }, this.state.data.headers.map(function (header, i) {
           return _react["default"].createElement(_Header["default"], {
             key: i + "_header",
             data: header
@@ -25592,7 +25595,7 @@ function (_Component) {
       }
 
       return _react["default"].createElement("li", null, _react["default"].createElement("div", {
-        className: "collapsible-header"
+        className: "".concat(this.state.color, " collapsible-header")
       }, this.state.displayName), sheet);
     }
   }]);
@@ -25659,35 +25662,43 @@ function (_Component) {
       var worksheetNamesAndRanges = {
         tantargyak_itthon: {
           name: "Tantárgyak itthon",
-          range: "A1:G100"
+          range: "A1:G100",
+          color: "orange lighten-5"
         },
         szakok: {
           name: "Szakok",
-          range: "A1:G100"
+          range: "A1:G100",
+          color: "blue-grey lighten-5"
         },
         versenyek: {
           name: "Versenyek",
-          range: "A1:G100"
+          range: "A1:G100",
+          color: "lime lighten-5"
         },
         europai_diplomak: {
           name: "Európai diplomák",
-          range: "A1:G100"
+          range: "A1:G100",
+          color: "green lighten-5"
         },
         esemenyek: {
           name: "Események, MOOC",
-          range: "A1:G100"
+          range: "A1:G100",
+          color: "blue-grey lighten-5"
         },
         kutatocsoportok_es_cegek: {
           name: "Kutatócsoportok és cégek",
-          range: "A1:G100"
+          range: "A1:G100",
+          color: "blue lighten-5"
         },
         partnerek: {
           name: "Partnerek",
-          range: "A1:G100"
+          range: "A1:G100",
+          color: "red lighten-5"
         },
         eddigi_megjeleneseink: {
           name: "Eddigi megjelenéseink",
-          range: "A1:G100"
+          range: "A1:G100",
+          color: "teal lighten-5"
         }
       };
       return _react["default"].createElement("ul", {
@@ -25699,6 +25710,7 @@ function (_Component) {
           key: i,
           worksheetName: worksheetName,
           displayName: workSheet.name,
+          color: workSheet.color,
           range: workSheet.range
         });
       }));
