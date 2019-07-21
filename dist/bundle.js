@@ -25543,8 +25543,8 @@ function (_Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      //fetch('http://localhost:8080/lists/' + this.state.worksheetName + '/' + this.state.range)
-      fetch('https://mantufo-lists.herokuapp.com/lists/' + this.state.worksheetName + '/' + this.state.range).then(function (response) {
+      fetch('http://localhost:8080/lists/' + this.state.worksheetName + '/' + this.state.range) //fetch('https://mantufo-lists.herokuapp.com/lists/' + this.state.worksheetName + '/' + this.state.range)
+      .then(function (response) {
         return response.json();
       }).then(function (data) {
         _this2.setState({
