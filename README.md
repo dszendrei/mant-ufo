@@ -19,4 +19,5 @@ One is the www.mantufo.herokuapp.com/about
 Other it he www.mantufo.herokuapp.com/lists
   - made with React.
   - backend made with Spring Boot (reads data from a google sheet document)
+    (https://github.com/dszendrei/mantufo_listsapi)
   - design will be implemented later with possible login function.
