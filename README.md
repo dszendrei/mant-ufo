@@ -8,6 +8,8 @@ Landing page made with JS, HTML and CSS.
   - clickable icons will refer to subpages.
   
 There are two subpages under construction.
+All of the pages use different frontend framework but share the NodeJs server.
+Implemented with babel and browserify.
 
 One is the www.mantufo.herokuapp.com/about
   - will be made with Angular,
