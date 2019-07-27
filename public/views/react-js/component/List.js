@@ -43,8 +43,8 @@ class List extends Component {
             sheet = <div className="collapsible-body">Loading...</div>
         } else {
             sheet =
-                <div className="collapsible-body">
-                    <table className="striped">
+                <div className="collapsible-body" style={{ backgroundColor: 'grey' , borderColor: 'black' }}>
+                    <table className="highlight">
                         <thead>
                             <tr className={this.state.color}>
                                 {this.state.data.headers.map((header, i) =>
@@ -68,7 +68,7 @@ class List extends Component {
 
         return (
             <li>
-                <div className={`${this.state.color} collapsible-header`}>
+                <div className={`grey darken-3 collapsible-header`} style={{ borderColor: 'black' }}>
                     {this.state.displayName}
                 </div>
                 {sheet}

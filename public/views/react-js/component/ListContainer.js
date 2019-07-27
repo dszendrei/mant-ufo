@@ -17,39 +17,39 @@ class ListContainer extends Component {
             tantargyak_itthon: {
                 name: "Tantárgyak itthon",
                 range: "A1:G100",
-                color: "orange lighten-5"},
+                color: "amber darken-1"},
             szakok: {
                 name: "Szakok",
                 range: "A1:G100",
-                color: "blue-grey lighten-5"},
+                color: "blue-grey darken-1"},
             versenyek: {
                 name: "Versenyek",
                 range: "A1:G100",
-                color: "lime lighten-5"},
+                color: "lime darken-2"},
             europai_diplomak: {
                 name: "Európai diplomák",
                 range: "A1:G100",
-                color: "green lighten-5"},
+                color: "light-green darken-1"},
             esemenyek: {
                 name: "Események, MOOC",
                 range: "A1:G100",
-                color: "blue-grey lighten-5"},
+                color: "blue-grey darken-3"},
             kutatocsoportok_es_cegek: {
                 name: "Kutatócsoportok és cégek",
                 range: "A1:G100",
-                color: "blue lighten-5"},
+                color: "cyan darken-2"},
             partnerek: {
                 name: "Partnerek",
                 range: "A1:G100",
-                color: "red lighten-5"},
+                color: "red accent-2"},
             eddigi_megjeleneseink: {
                 name: "Eddigi megjelenéseink",
                 range: "A1:G100",
-                color: "teal lighten-5"}
+                color: "teal darken-1"}
         }
 
         return (
-            <ul className="collapsible">
+            <ul className="collapsible" style={{ borderColor: 'black' , color: 'white' }}>
                 {Object.keys(worksheetNamesAndRanges).map((worksheetName, i) => {
                     let workSheet = worksheetNamesAndRanges[worksheetName];
                     return (
