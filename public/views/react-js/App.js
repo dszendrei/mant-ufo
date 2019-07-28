@@ -15,7 +15,7 @@ class App extends Component {
     }
 
     componentDidMount() {
-        this.setFontSize()
+        this.setFontSize();
         window.addEventListener("resize", this.setFontSize);
     }
 

@@ -25568,6 +25568,7 @@ function (_Component) {
       worksheetName: props.worksheetName,
       color: props.color,
       range: props.range,
+      displayChange: props.displayChange,
       data: {
         sheetName: '',
         headers: [],
@@ -25639,8 +25640,18 @@ function (_Component) {
         }))));
       }
 
+      var liClass = "collapsible-element section scrollspy";
+
+      if (window.innerWidth > this.state.displayChange) {
+        liClass = liClass.concat(" active");
+      }
+
       return _react["default"].createElement("li", {
-        id: this.state.worksheetName
+        id: this.state.worksheetName,
+        className: liClass,
+        style: {
+          padding: '1px'
+        }
       }, _react["default"].createElement("div", {
         className: "grey darken-3 collapsible-header",
         style: {
@@ -25682,13 +25693,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var ListContainer =
 /*#__PURE__*/
@@ -25696,20 +25709,54 @@ function (_Component) {
   _inherits(ListContainer, _Component);
 
   function ListContainer(props) {
+    var _this;
+
     _classCallCheck(this, ListContainer);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(ListContainer).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(ListContainer).call(this, props));
+
+    _defineProperty(_assertThisInitialized(_this), "setScrollspyVisibility", function () {
+      if (window.innerWidth > _this.state.displayChange) {
+        _this.setState({
+          display: 'block',
+          containerSize: 'l10',
+          isScrollspyVisible: true
+        });
+      } else {
+        _this.setState({
+          display: 'none',
+          containerSize: 'l12',
+          isScrollspyVisible: false
+        });
+      }
+    });
+
+    _this.state = {
+      display: null,
+      containerSize: null,
+      isScrollspyVisible: null,
+      displayChange: 1150
+    };
+    return _this;
   }
 
   _createClass(ListContainer, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      M.Collapsible.init(document.querySelectorAll('.collapsible'));
-      M.ScrollSpy.init(document.querySelectorAll('.scrollspy'));
+      this.setScrollspyVisibility();
+      window.addEventListener("resize", this.setScrollspyVisibility);
+      M.Collapsible.init(document.querySelectorAll('.collapsible'), {
+        accordion: this.state.isScrollspyVisible
+      });
+      M.ScrollSpy.init(document.querySelectorAll('.scrollspy'), {
+        scrollOffset: 50
+      });
     }
   }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       var worksheetNamesAndRanges = {
         tantargyak_itthon: {
           name: "Tantárgyak itthon",
@@ -25753,25 +25800,27 @@ function (_Component) {
         }
       };
       return _react["default"].createElement(_react["default"].Fragment, null, _react["default"].createElement("ul", {
-        className: "collapsible expandable col s12 m12 l10",
+        className: "collapsible expandable col s12 m12 ".concat(this.state.containerSize),
         style: {
-          borderColor: 'black',
-          color: 'white'
+          boxShadow: 'none',
+          color: 'white',
+          border: '0'
         }
       }, Object.keys(worksheetNamesAndRanges).map(function (worksheetName, i) {
         var workSheet = worksheetNamesAndRanges[worksheetName];
         return _react["default"].createElement(_List["default"], {
-          className: "collapsible-element section scrollspy",
           key: i,
           worksheetName: worksheetName,
           displayName: workSheet.name,
           color: workSheet.color,
-          range: workSheet.range
+          range: workSheet.range,
+          displayChange: _this2.state.displayChange
         });
       })), _react["default"].createElement("div", {
-        className: "col hide-on-med-and-down l2 toc-wrapper pinned",
+        className: "col l2 toc-wrapper pinned",
         style: {
-          right: '5px'
+          right: '5px',
+          display: this.state.display
         }
       }, _react["default"].createElement("ul", {
         className: "section table-of-contents"
