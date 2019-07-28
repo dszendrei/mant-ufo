@@ -83,7 +83,7 @@ class ListContainer extends Component {
               <ul className="section table-of-contents">
                 {Object.keys(worksheetNamesAndRanges).map((worksheetName, i) => {
                 let workSheet = worksheetNamesAndRanges[worksheetName];
-                return (<li style={{ borderBottom: '1px solid black', paddingBottom: '5px', paddingTop: '10px' }}>
+                return (<li key={i} style={{ borderBottom: '1px solid black', paddingBottom: '5px', paddingTop: '10px' }}>
                     <a href={`#${worksheetName}`}>{workSheet.name}</a></li>)})}
               </ul>
             </div>

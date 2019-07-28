@@ -71,8 +71,8 @@ class List extends Component {
         let liClass = "collapsible-element section scrollspy";
 
         if (window.innerWidth > this.state.displayChange) {
-                liClass = liClass.concat(" active");
-            }
+            liClass = liClass.concat(" active");
+        }
 
         return (
             <li id={this.state.worksheetName} className={liClass}
