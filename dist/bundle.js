@@ -25753,7 +25753,7 @@ function (_Component) {
         }
       };
       return _react["default"].createElement(_react["default"].Fragment, null, _react["default"].createElement("ul", {
-        className: "collapsible expandable col s12 m9 l10",
+        className: "collapsible expandable col s12 m12 l10",
         style: {
           borderColor: 'black',
           color: 'white'
@@ -25769,7 +25769,7 @@ function (_Component) {
           range: workSheet.range
         });
       })), _react["default"].createElement("div", {
-        className: "col hide-on-small-only m3 l2 toc-wrapper pinned",
+        className: "col hide-on-med-and-down l2 toc-wrapper pinned",
         style: {
           right: '5px'
         }
