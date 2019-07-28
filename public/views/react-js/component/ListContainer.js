@@ -51,7 +51,7 @@ class ListContainer extends Component {
 
         return (
         <React.Fragment>
-            <ul className="collapsible expandable col s12 m9 l10" style={{ borderColor: 'black' , color: 'white' }}>
+            <ul className="collapsible expandable col s12 m12 l10" style={{ borderColor: 'black' , color: 'white' }}>
                 {Object.keys(worksheetNamesAndRanges).map((worksheetName, i) => {
                     let workSheet = worksheetNamesAndRanges[worksheetName];
                     return (
@@ -61,7 +61,7 @@ class ListContainer extends Component {
                     )
                 })}
             </ul>
-            <div className="col hide-on-small-only m3 l2 toc-wrapper pinned" style={{ right: '5px' }}>
+            <div className="col hide-on-med-and-down l2 toc-wrapper pinned" style={{ right: '5px' }}>
               <ul className="section table-of-contents">
                 {Object.keys(worksheetNamesAndRanges).map((worksheetName, i) => {
                 let workSheet = worksheetNamesAndRanges[worksheetName];
