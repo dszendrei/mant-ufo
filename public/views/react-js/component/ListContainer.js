@@ -5,11 +5,28 @@ class ListContainer extends Component {
 
     constructor(props) {
         super(props);
+
+        this.state = {
+            display: null,
+            containerSize: null,
+            isScrollspyVisible: null,
+            displayChange: 1150
+        }
+    }
+
+    setScrollspyVisibility = () => {
+        if (window.innerWidth > this.state.displayChange) {
+            this.setState({ display: 'block', containerSize: 'l10', isScrollspyVisible: true });
+        } else {
+            this.setState({ display: 'none', containerSize: 'l12', isScrollspyVisible: false });
+        }
     }
 
     componentDidMount() {
-        M.Collapsible.init(document.querySelectorAll('.collapsible'));
-        M.ScrollSpy.init(document.querySelectorAll('.scrollspy'));
+        this.setScrollspyVisibility();
+        window.addEventListener("resize", this.setScrollspyVisibility);
+        M.Collapsible.init(document.querySelectorAll('.collapsible'), {accordion: this.state.isScrollspyVisible});
+        M.ScrollSpy.init(document.querySelectorAll('.scrollspy'), {scrollOffset: 50});
     }
 
     render() {
@@ -51,17 +68,18 @@ class ListContainer extends Component {
 
         return (
         <React.Fragment>
-            <ul className="collapsible expandable col s12 m12 l10" style={{ borderColor: 'black' , color: 'white' }}>
+            <ul className={`collapsible expandable col s12 m12 ${this.state.containerSize}`}
+            style={{ boxShadow: 'none' , color: 'white', border: '0' }}>
                 {Object.keys(worksheetNamesAndRanges).map((worksheetName, i) => {
                     let workSheet = worksheetNamesAndRanges[worksheetName];
                     return (
-                        <List className='collapsible-element section scrollspy' key={i} worksheetName={worksheetName}
+                        <List key={i} worksheetName={worksheetName}
                             displayName={workSheet.name} color={workSheet.color}
-                            range={workSheet.range}></List>
+                            range={workSheet.range} displayChange={this.state.displayChange}></List>
                     )
                 })}
             </ul>
-            <div className="col hide-on-med-and-down l2 toc-wrapper pinned" style={{ right: '5px' }}>
+            <div className="col l2 toc-wrapper pinned" style={{ right: '5px' , display: this.state.display }}>
               <ul className="section table-of-contents">
                 {Object.keys(worksheetNamesAndRanges).map((worksheetName, i) => {
                 let workSheet = worksheetNamesAndRanges[worksheetName];

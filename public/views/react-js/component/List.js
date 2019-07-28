@@ -12,6 +12,7 @@ class List extends Component {
             worksheetName: props.worksheetName,
             color: props.color,
             range: props.range,
+            displayChange: props.displayChange,
             data: {
                 sheetName: '',
                 headers: [],
@@ -67,9 +68,16 @@ class List extends Component {
                 </div>
         }
 
+        let liClass = "collapsible-element section scrollspy";
+
+        if (window.innerWidth > this.state.displayChange) {
+                liClass = liClass.concat(" active");
+            }
+
         return (
-            <li id={this.state.worksheetName}>
-                <div className={`grey darken-3 collapsible-header`} style={{ borderColor: 'black' }}>
+            <li id={this.state.worksheetName} className={liClass}
+            style={{ padding: '1px' }}>
+                <div className='grey darken-3 collapsible-header' style={{ borderColor: 'black' }}>
                     {this.state.displayName}
                 </div>
                 {sheet}
