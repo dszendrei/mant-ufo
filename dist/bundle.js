@@ -25265,11 +25265,11 @@ function (_Component) {
         });
       } else if (window.innerWidth < 600) {
         _this.setState({
-          mediaFontSize: '40px'
+          mediaFontSize: '35px'
         });
       } else if (window.innerWidth < 900) {
         _this.setState({
-          mediaFontSize: '47px'
+          mediaFontSize: '40px'
         });
       } else if (window.innerWidth < 1400) {
         _this.setState({
@@ -25658,7 +25658,12 @@ function (_Component) {
         style: {
           borderColor: 'black'
         }
-      }, this.state.displayName, _react["default"].createElement("div", {
+      }, _react["default"].createElement("div", {
+        style: {
+          marginTop: 'auto',
+          marginBottom: 'auto'
+        }
+      }, this.state.displayName), _react["default"].createElement("div", {
         className: "link-icon ".concat(this.state.color),
         style: {
           marginLeft: 'auto',

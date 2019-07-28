@@ -23,9 +23,9 @@ class App extends Component {
         if (window.innerWidth < 400) {
             this.setState({ mediaFontSize: '30px' });
         } else if (window.innerWidth < 600) {
-            this.setState({ mediaFontSize: '40px' });
+            this.setState({ mediaFontSize: '35px' });
         } else if (window.innerWidth < 900) {
-            this.setState({ mediaFontSize: '47px' });
+            this.setState({ mediaFontSize: '40px' });
         } else if (window.innerWidth < 1400) {
             this.setState({ mediaFontSize: '25px' });
         } else if (window.innerWidth < 2000) {

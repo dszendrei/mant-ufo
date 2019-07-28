@@ -77,8 +77,9 @@ class List extends Component {
 
         return (
             <li id={this.state.worksheetName} className={liClass} style={{ padding: '1px' }}>
-                <div className='grey darken-3 collapsible-header' style={{ borderColor: 'black' }}>
-                    {this.state.displayName}
+                <div className='grey darken-3 collapsible-header'
+                style={{ borderColor: 'black' }}>
+                    <div style={{ marginTop: 'auto', marginBottom: 'auto' }}>{this.state.displayName}</div>
                     <div className={`link-icon ${this.state.color}`}
                     style={{ marginLeft: 'auto', marginRight: '0px', marginTop: 'auto', marginBottom: 'auto',
                     width: '2em', height: '2em' ,borderRadius: '50%'}}>
