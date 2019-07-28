@@ -11,6 +11,7 @@ class List extends Component {
             displayName: props.displayName,
             worksheetName: props.worksheetName,
             color: props.color,
+            icon: props.icon,
             range: props.range,
             displayChange: props.displayChange,
             data: {
@@ -75,10 +76,13 @@ class List extends Component {
         }
 
         return (
-            <li id={this.state.worksheetName} className={liClass}
-            style={{ padding: '1px' }}>
+            <li id={this.state.worksheetName} className={liClass} style={{ padding: '1px' }}>
                 <div className='grey darken-3 collapsible-header' style={{ borderColor: 'black' }}>
                     {this.state.displayName}
+                    <div className={`link-icon btn-floating ${this.state.color}`}
+                    style={{ marginLeft: 'auto', marginRight: '0px'}}>
+                        <i className="material-icons" style={{ width: '100%', textAlign: 'center' }}>{this.state.icon}</i>
+                    </div>
                 </div>
                 {sheet}
             </li>

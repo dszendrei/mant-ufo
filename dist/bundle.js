@@ -25567,6 +25567,7 @@ function (_Component) {
       displayName: props.displayName,
       worksheetName: props.worksheetName,
       color: props.color,
+      icon: props.icon,
       range: props.range,
       displayChange: props.displayChange,
       data: {
@@ -25657,7 +25658,19 @@ function (_Component) {
         style: {
           borderColor: 'black'
         }
-      }, this.state.displayName), sheet);
+      }, this.state.displayName, _react["default"].createElement("div", {
+        className: "link-icon btn-floating ".concat(this.state.color),
+        style: {
+          marginLeft: 'auto',
+          marginRight: '0px'
+        }
+      }, _react["default"].createElement("i", {
+        className: "material-icons",
+        style: {
+          width: '100%',
+          textAlign: 'center'
+        }
+      }, this.state.icon))), sheet);
     }
   }]);
 
@@ -25761,42 +25774,50 @@ function (_Component) {
         tantargyak_itthon: {
           name: "Tantárgyak itthon",
           range: "A1:G100",
-          color: "amber darken-1"
+          color: "amber darken-1",
+          icon: "perm_media"
         },
         szakok: {
           name: "Szakok",
           range: "A1:G100",
-          color: "blue-grey darken-1"
+          color: "blue-grey darken-1",
+          icon: "school"
         },
         versenyek: {
           name: "Versenyek",
           range: "A1:G100",
-          color: "lime darken-2"
+          color: "lime darken-2",
+          icon: "colorize"
         },
         europai_diplomak: {
           name: "Európai diplomák",
           range: "A1:G100",
-          color: "light-green darken-1"
+          color: "light-green darken-1",
+          icon: "perm_media"
         },
         esemenyek: {
           name: "Események, MOOC",
           range: "A1:G100",
-          color: "blue-grey darken-3"
+          color: "blue-grey darken-3",
+          icon: "calendar_today"
         },
         kutatocsoportok_es_cegek: {
           name: "Kutatócsoportok és cégek",
           range: "A1:G100",
-          color: "cyan darken-2"
+          color: "cyan darken-2",
+          icon: "how_to_reg"
         },
         partnerek: {
           name: "Partnerek",
           range: "A1:G100",
-          color: "red accent-2"
+          color: "red accent-2",
+          icon: "description"
         },
         eddigi_megjeleneseink: {
           name: "Eddigi megjelenéseink",
           range: "A1:G100",
-          color: "teal darken-1"
+          color: "teal darken-1",
+          icon: "face"
         }
       };
       return _react["default"].createElement(_react["default"].Fragment, null, _react["default"].createElement("ul", {
@@ -25813,6 +25834,7 @@ function (_Component) {
           worksheetName: worksheetName,
           displayName: workSheet.name,
           color: workSheet.color,
+          icon: workSheet.icon,
           range: workSheet.range,
           displayChange: _this2.state.displayChange
         });
