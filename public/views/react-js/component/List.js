@@ -79,9 +79,11 @@ class List extends Component {
             <li id={this.state.worksheetName} className={liClass} style={{ padding: '1px' }}>
                 <div className='grey darken-3 collapsible-header' style={{ borderColor: 'black' }}>
                     {this.state.displayName}
-                    <div className={`link-icon btn-floating ${this.state.color}`}
-                    style={{ marginLeft: 'auto', marginRight: '0px'}}>
-                        <i className="material-icons" style={{ width: '100%', textAlign: 'center' }}>{this.state.icon}</i>
+                    <div className={`link-icon ${this.state.color}`}
+                    style={{ marginLeft: 'auto', marginRight: '0px', marginTop: 'auto', marginBottom: 'auto',
+                    width: '2em', height: '2em' ,borderRadius: '50%'}}>
+                        <i className="material-icons" style={{ width: '100%', fontSize: '1em',
+                        textAlign: 'center', verticalAlign: 'bottom' }}>{this.state.icon}</i>
                     </div>
                 </div>
                 {sheet}

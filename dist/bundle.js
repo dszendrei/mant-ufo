@@ -25659,16 +25659,23 @@ function (_Component) {
           borderColor: 'black'
         }
       }, this.state.displayName, _react["default"].createElement("div", {
-        className: "link-icon btn-floating ".concat(this.state.color),
+        className: "link-icon ".concat(this.state.color),
         style: {
           marginLeft: 'auto',
-          marginRight: '0px'
+          marginRight: '0px',
+          marginTop: 'auto',
+          marginBottom: 'auto',
+          width: '2em',
+          height: '2em',
+          borderRadius: '50%'
         }
       }, _react["default"].createElement("i", {
         className: "material-icons",
         style: {
           width: '100%',
-          textAlign: 'center'
+          fontSize: '1em',
+          textAlign: 'center',
+          verticalAlign: 'bottom'
         }
       }, this.state.icon))), sheet);
     }
@@ -25774,13 +25781,13 @@ function (_Component) {
         tantargyak_itthon: {
           name: "Tantárgyak itthon",
           range: "A1:G100",
-          color: "amber darken-1",
+          color: "yellow darken-3",
           icon: "perm_media"
         },
         szakok: {
           name: "Szakok",
           range: "A1:G100",
-          color: "blue-grey darken-1",
+          color: "green lighten-1",
           icon: "school"
         },
         versenyek: {
@@ -25798,7 +25805,7 @@ function (_Component) {
         esemenyek: {
           name: "Események, MOOC",
           range: "A1:G100",
-          color: "blue-grey darken-3",
+          color: "blue-grey darken-1",
           icon: "calendar_today"
         },
         kutatocsoportok_es_cegek: {

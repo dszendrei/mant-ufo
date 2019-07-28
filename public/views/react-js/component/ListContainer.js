@@ -35,12 +35,12 @@ class ListContainer extends Component {
             tantargyak_itthon: {
                 name: "Tantárgyak itthon",
                 range: "A1:G100",
-                color: "amber darken-1",
+                color: "yellow darken-3",
                 icon: "perm_media"},
             szakok: {
                 name: "Szakok",
                 range: "A1:G100",
-                color: "blue-grey darken-1",
+                color: "green lighten-1",
                 icon: "school"},
             versenyek: {
                 name: "Versenyek",
@@ -55,7 +55,7 @@ class ListContainer extends Component {
             esemenyek: {
                 name: "Események, MOOC",
                 range: "A1:G100",
-                color: "blue-grey darken-3",
+                color: "blue-grey darken-1",
                 icon: "calendar_today"},
             kutatocsoportok_es_cegek: {
                 name: "Kutatócsoportok és cégek",
