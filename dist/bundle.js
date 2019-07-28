@@ -25273,15 +25273,15 @@ function (_Component) {
         });
       } else if (window.innerWidth < 1400) {
         _this.setState({
-          mediaFontSize: '55px'
+          mediaFontSize: '25px'
         });
       } else if (window.innerWidth < 2000) {
         _this.setState({
-          mediaFontSize: '60px'
+          mediaFontSize: '25px'
         });
       } else {
         _this.setState({
-          mediaFontSize: '65px'
+          mediaFontSize: '25px'
         });
       }
     });
@@ -25301,7 +25301,13 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      return _react["default"].createElement("div", null, _react["default"].createElement("div", {
+      return _react["default"].createElement("div", {
+        style: {
+          display: 'inline-block',
+          width: 'auto',
+          minWidth: '100%'
+        }
+      }, _react["default"].createElement("div", {
         style: {
           padding: '10px',
           fontSize: this.state.mediaFontSize
@@ -25370,15 +25376,15 @@ function (_Component) {
       var urlRegex = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
 
       if (this.state.valueString.match(urlRegex) != null) {
-        value = _react["default"].createElement("td", null, _react["default"].createElement("a", {
+        value = _react["default"].createElement("a", {
           target: "_blank",
           href: this.state.valueString
-        }, " LINK "));
+        }, " LINK ");
       } else {
-        value = _react["default"].createElement("td", null, " ", this.state.valueString, " ");
+        value = this.state.valueString;
       }
 
-      return value;
+      return _react["default"].createElement("td", null, value);
     }
   }]);
 
@@ -25605,7 +25611,8 @@ function (_Component) {
           className: "collapsible-body",
           style: {
             backgroundColor: 'grey',
-            borderColor: 'black'
+            borderColor: 'black',
+            fontSize: '70%'
           }
         }, _react["default"].createElement("table", {
           className: "highlight"
