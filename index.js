@@ -4,7 +4,8 @@ var bodyParser = require('body-parser');
 var fs = require("fs");
 var browserify = require("browserify");
 browserify(["./public/views/react-js/index.js"])
-  .transform("babelify", {presets: ["@babel/preset-env", "@babel/preset-react"]})
+  .transform("babelify", {presets: ["@babel/preset-env", "@babel/preset-react"],
+  plugins: ["@babel/plugin-proposal-class-properties"]})
   .bundle()
   .pipe(fs.createWriteStream("dist/bundle.js"));
 
