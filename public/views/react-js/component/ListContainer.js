@@ -26,7 +26,7 @@ class ListContainer extends Component {
         this.setScrollspyVisibility();
         window.addEventListener("resize", this.setScrollspyVisibility);
         M.Collapsible.init(document.querySelectorAll('.collapsible'), {accordion: this.state.isScrollspyVisible});
-        M.ScrollSpy.init(document.querySelectorAll('.scrollspy'), {scrollOffset: 50});
+        M.ScrollSpy.init(document.querySelectorAll('.scrollspy'), {scrollOffset: 20});
     }
 
     render() {
@@ -83,7 +83,8 @@ class ListContainer extends Component {
               <ul className="section table-of-contents">
                 {Object.keys(worksheetNamesAndRanges).map((worksheetName, i) => {
                 let workSheet = worksheetNamesAndRanges[worksheetName];
-                return (<li key={i} style={{ borderBottom: '1px solid black', paddingBottom: '5px', paddingTop: '10px' }}>
+                return (<li key={i} style={{ borderBottom: '1px solid black', paddingBottom: '5px',
+                paddingTop: '10px', fontSize: '80%' }}>
                     <a href={`#${worksheetName}`}>{workSheet.name}</a></li>)})}
               </ul>
             </div>

@@ -1,5 +1,4 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
-/* Style the video: 100% width and height to cover the entire window */
 
 html {
   scroll-behavior: smooth;
@@ -80,7 +79,6 @@ body {
   opacity: .5;
 }
 
-/* Add some content at the bottom of the video/page */
 .content {
   position: relative;
   bottom: 0;

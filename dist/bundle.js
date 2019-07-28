@@ -25749,7 +25749,7 @@ function (_Component) {
         accordion: this.state.isScrollspyVisible
       });
       M.ScrollSpy.init(document.querySelectorAll('.scrollspy'), {
-        scrollOffset: 50
+        scrollOffset: 20
       });
     }
   }, {
@@ -25831,7 +25831,8 @@ function (_Component) {
           style: {
             borderBottom: '1px solid black',
             paddingBottom: '5px',
-            paddingTop: '10px'
+            paddingTop: '10px',
+            fontSize: '80%'
           }
         }, _react["default"].createElement("a", {
           href: "#".concat(worksheetName)
