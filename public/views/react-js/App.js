@@ -27,18 +27,18 @@ class App extends Component {
         } else if (window.innerWidth < 900) {
             this.setState({ mediaFontSize: '47px' });
         } else if (window.innerWidth < 1400) {
-            this.setState({ mediaFontSize: '55px' });
+            this.setState({ mediaFontSize: '25px' });
         } else if (window.innerWidth < 2000) {
-            this.setState({ mediaFontSize: '60px' });
+            this.setState({ mediaFontSize: '25px' });
         } else {
-            this.setState({ mediaFontSize: '65px' });
+            this.setState({ mediaFontSize: '25px' });
         }
     }
 
     render() {
 
         return (
-        <div>
+        <div style={{ display: 'inline-block', width: 'auto', minWidth: '100%' }}>
             {/*<div>
                 <HomeCard title="Registration" content="Easy to join, hard to leave!" icon='check_circle_outline'></HomeCard>
                 <HomeCard title="Login" content="With email or username" icon='check_circle_outline'></HomeCard>

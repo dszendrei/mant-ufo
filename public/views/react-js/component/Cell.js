@@ -16,17 +16,15 @@ class Header extends Component {
         let urlRegex =/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
 
         if (this.state.valueString.match(urlRegex) != null) {
-            value =
-                <td>
-                    <a target="_blank" href={this.state.valueString}> LINK </a>
-                </td>
+            value = <a target="_blank" href={this.state.valueString}> LINK </a>
         } else {
-            value =
-                <td> {this.state.valueString} </td>
+            value = this.state.valueString
         }
 
         return (
-            value
+            <td>
+                { value }
+            </td>
         )
     }
 }
