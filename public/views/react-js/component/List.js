@@ -68,7 +68,7 @@ class List extends Component {
         }
 
         return (
-            <li>
+            <li id={this.state.worksheetName}>
                 <div className={`grey darken-3 collapsible-header`} style={{ borderColor: 'black' }}>
                     {this.state.displayName}
                 </div>

@@ -25302,6 +25302,7 @@ function (_Component) {
     key: "render",
     value: function render() {
       return _react["default"].createElement("div", {
+        className: "row",
         style: {
           display: 'inline-block',
           width: 'auto',
@@ -25377,6 +25378,9 @@ function (_Component) {
 
       if (this.state.valueString.match(urlRegex) != null) {
         value = _react["default"].createElement("a", {
+          style: {
+            color: 'cyan'
+          },
           target: "_blank",
           href: this.state.valueString
         }, " LINK ");
@@ -25635,7 +25639,9 @@ function (_Component) {
         }))));
       }
 
-      return _react["default"].createElement("li", null, _react["default"].createElement("div", {
+      return _react["default"].createElement("li", {
+        id: this.state.worksheetName
+      }, _react["default"].createElement("div", {
         className: "grey darken-3 collapsible-header",
         style: {
           borderColor: 'black'
@@ -25699,6 +25705,7 @@ function (_Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       M.Collapsible.init(document.querySelectorAll('.collapsible'));
+      M.ScrollSpy.init(document.querySelectorAll('.scrollspy'));
     }
   }, {
     key: "render",
@@ -25745,8 +25752,8 @@ function (_Component) {
           color: "teal darken-1"
         }
       };
-      return _react["default"].createElement("ul", {
-        className: "collapsible",
+      return _react["default"].createElement(_react["default"].Fragment, null, _react["default"].createElement("ul", {
+        className: "collapsible expandable col s12 m9 l10",
         style: {
           borderColor: 'black',
           color: 'white'
@@ -25754,14 +25761,32 @@ function (_Component) {
       }, Object.keys(worksheetNamesAndRanges).map(function (worksheetName, i) {
         var workSheet = worksheetNamesAndRanges[worksheetName];
         return _react["default"].createElement(_List["default"], {
-          className: "collapsible-element",
+          className: "collapsible-element section scrollspy",
           key: i,
           worksheetName: worksheetName,
           displayName: workSheet.name,
           color: workSheet.color,
           range: workSheet.range
         });
-      }));
+      })), _react["default"].createElement("div", {
+        className: "col hide-on-small-only m3 l2 toc-wrapper pinned",
+        style: {
+          right: '5px'
+        }
+      }, _react["default"].createElement("ul", {
+        className: "section table-of-contents"
+      }, Object.keys(worksheetNamesAndRanges).map(function (worksheetName, i) {
+        var workSheet = worksheetNamesAndRanges[worksheetName];
+        return _react["default"].createElement("li", {
+          style: {
+            borderBottom: '1px solid black',
+            paddingBottom: '5px',
+            paddingTop: '10px'
+          }
+        }, _react["default"].createElement("a", {
+          href: "#".concat(worksheetName)
+        }, workSheet.name));
+      }))));
     }
   }]);
 

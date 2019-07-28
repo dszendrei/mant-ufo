@@ -9,6 +9,7 @@ class ListContainer extends Component {
 
     componentDidMount() {
         M.Collapsible.init(document.querySelectorAll('.collapsible'));
+        M.ScrollSpy.init(document.querySelectorAll('.scrollspy'));
     }
 
     render() {
@@ -49,16 +50,26 @@ class ListContainer extends Component {
         }
 
         return (
-            <ul className="collapsible" style={{ borderColor: 'black' , color: 'white' }}>
+        <React.Fragment>
+            <ul className="collapsible expandable col s12 m9 l10" style={{ borderColor: 'black' , color: 'white' }}>
                 {Object.keys(worksheetNamesAndRanges).map((worksheetName, i) => {
                     let workSheet = worksheetNamesAndRanges[worksheetName];
                     return (
-                        <List className='collapsible-element' key={i} worksheetName={worksheetName}
+                        <List className='collapsible-element section scrollspy' key={i} worksheetName={worksheetName}
                             displayName={workSheet.name} color={workSheet.color}
                             range={workSheet.range}></List>
                     )
                 })}
             </ul>
+            <div className="col hide-on-small-only m3 l2 toc-wrapper pinned" style={{ right: '5px' }}>
+              <ul className="section table-of-contents">
+                {Object.keys(worksheetNamesAndRanges).map((worksheetName, i) => {
+                let workSheet = worksheetNamesAndRanges[worksheetName];
+                return (<li style={{ borderBottom: '1px solid black', paddingBottom: '5px', paddingTop: '10px' }}>
+                    <a href={`#${worksheetName}`}>{workSheet.name}</a></li>)})}
+              </ul>
+            </div>
+        </React.Fragment>
         )
     }
 }
