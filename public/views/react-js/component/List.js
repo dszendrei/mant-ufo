@@ -82,7 +82,7 @@ class List extends Component {
                     <div style={{ marginTop: 'auto', marginBottom: 'auto' }}>{this.state.displayName}</div>
                     <div className={`link-icon ${this.state.color}`}
                     style={{ marginLeft: 'auto', marginRight: '0px', marginTop: 'auto', marginBottom: 'auto',
-                    width: '2em', height: '2em' ,borderRadius: '50%'}}>
+                    width: '2em', minWidth: "2em", height: '2em' ,borderRadius: '50%'}}>
                         <i className="material-icons" style={{ width: '100%', fontSize: '1em',
                         textAlign: 'center', verticalAlign: 'bottom' }}>{this.state.icon}</i>
                     </div>

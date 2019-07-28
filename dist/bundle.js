@@ -25671,6 +25671,7 @@ function (_Component) {
           marginTop: 'auto',
           marginBottom: 'auto',
           width: '2em',
+          minWidth: "2em",
           height: '2em',
           borderRadius: '50%'
         }
