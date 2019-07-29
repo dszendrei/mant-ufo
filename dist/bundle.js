@@ -25261,27 +25261,27 @@ function (_Component) {
     _defineProperty(_assertThisInitialized(_this), "setFontSize", function () {
       if (window.innerWidth < 400) {
         _this.setState({
-          mediaFontSize: '30px'
+          mediaFontSize: '16px'
         });
       } else if (window.innerWidth < 600) {
         _this.setState({
-          mediaFontSize: '35px'
+          mediaFontSize: '18px'
         });
       } else if (window.innerWidth < 900) {
         _this.setState({
-          mediaFontSize: '40px'
+          mediaFontSize: '20px'
         });
       } else if (window.innerWidth < 1400) {
         _this.setState({
-          mediaFontSize: '25px'
+          mediaFontSize: '22px'
         });
       } else if (window.innerWidth < 2000) {
         _this.setState({
-          mediaFontSize: '25px'
+          mediaFontSize: '24px'
         });
       } else {
         _this.setState({
-          mediaFontSize: '25px'
+          mediaFontSize: '26px'
         });
       }
     });
@@ -25388,7 +25388,11 @@ function (_Component) {
         value = this.state.valueString;
       }
 
-      return _react["default"].createElement("td", null, value);
+      return _react["default"].createElement("td", {
+        style: {
+          padding: '10px'
+        }
+      }, value);
     }
   }]);
 
@@ -25442,7 +25446,11 @@ function (_Component) {
   _createClass(Header, [{
     key: "render",
     value: function render() {
-      return _react["default"].createElement("th", null, " ", this.props.data.value, " ");
+      return _react["default"].createElement("th", {
+        style: {
+          padding: '10px'
+        }
+      }, " ", this.props.data.value, " ");
     }
   }]);
 
@@ -25618,7 +25626,8 @@ function (_Component) {
           style: {
             backgroundColor: 'grey',
             borderColor: 'black',
-            fontSize: '70%'
+            fontSize: '70%',
+            padding: '4px'
           }
         }, _react["default"].createElement("table", {
           className: "highlight"
@@ -25761,7 +25770,7 @@ function (_Component) {
       display: null,
       containerSize: null,
       isScrollspyVisible: null,
-      displayChange: 1150
+      displayChange: 1023
     };
     return _this;
   }

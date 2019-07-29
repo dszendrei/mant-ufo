@@ -10,7 +10,7 @@ class ListContainer extends Component {
             display: null,
             containerSize: null,
             isScrollspyVisible: null,
-            displayChange: 1150
+            displayChange: 1023
         }
     }
 

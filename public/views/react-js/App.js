@@ -21,17 +21,17 @@ class App extends Component {
 
     setFontSize = () => {
         if (window.innerWidth < 400) {
-            this.setState({ mediaFontSize: '30px' });
+            this.setState({ mediaFontSize: '16px' });
         } else if (window.innerWidth < 600) {
-            this.setState({ mediaFontSize: '35px' });
+            this.setState({ mediaFontSize: '18px' });
         } else if (window.innerWidth < 900) {
-            this.setState({ mediaFontSize: '40px' });
+            this.setState({ mediaFontSize: '20px' });
         } else if (window.innerWidth < 1400) {
-            this.setState({ mediaFontSize: '25px' });
+            this.setState({ mediaFontSize: '22px' });
         } else if (window.innerWidth < 2000) {
-            this.setState({ mediaFontSize: '25px' });
+            this.setState({ mediaFontSize: '24px' });
         } else {
-            this.setState({ mediaFontSize: '25px' });
+            this.setState({ mediaFontSize: '26px' });
         }
     }
 

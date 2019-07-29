@@ -46,7 +46,7 @@ class List extends Component {
         } else {
             sheet =
                 <div className="collapsible-body" style={{ backgroundColor: 'grey' , borderColor: 'black' ,
-                                                            fontSize: '70%'}}>
+                                                            fontSize: '70%', padding: '4px' }}>
                     <table className="highlight">
                         <thead>
                             <tr className={this.state.color}>

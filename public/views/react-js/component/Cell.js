@@ -22,7 +22,7 @@ class Header extends Component {
         }
 
         return (
-            <td>
+            <td style={{ padding: '10px' }}>
                 { value }
             </td>
         )
