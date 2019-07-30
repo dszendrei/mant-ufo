@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import HomeCard from "./component/HomeCard";
 import ListContainer from "./component/ListContainer"
-import Iframe from 'react-iframe';
 
 document.body.style.backgroundColor = "#212121";
 
@@ -38,7 +37,7 @@ class App extends Component {
     render() {
 
         return (
-        <div className='row' style={{ display: 'inline-block', width: 'auto', minWidth: '100%' }}>
+        <div style={{ display: 'inline-block', width: 'auto', minWidth: '100%' }}>
             {/*<div>
                 <HomeCard title="Registration" content="Easy to join, hard to leave!" icon='check_circle_outline'></HomeCard>
                 <HomeCard title="Login" content="With email or username" icon='check_circle_outline'></HomeCard>

@@ -21678,7 +21678,7 @@ module.exports = reactDom;
 }
 
 }).call(this,require('_process'))
-},{"_process":2,"object-assign":1,"prop-types/checkPropTypes":3,"react":11,"scheduler":16,"scheduler/tracing":17}],6:[function(require,module,exports){
+},{"_process":2,"object-assign":1,"prop-types/checkPropTypes":3,"react":10,"scheduler":15,"scheduler/tracing":16}],6:[function(require,module,exports){
 /** @license React v16.8.6
  * react-dom.production.min.js
  *
@@ -21949,7 +21949,7 @@ x("38"):void 0;return Si(a,b,c,!1,d)},unmountComponentAtNode:function(a){Qi(a)?v
 X;X=!0;try{ki(a)}finally{(X=b)||W||Yh(1073741823,!1)}},__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED:{Events:[Ia,Ja,Ka,Ba.injectEventPluginsByName,pa,Qa,function(a){ya(a,Pa)},Eb,Fb,Dd,Da]}};function Ui(a,b){Qi(a)?void 0:x("299","unstable_createRoot");return new Pi(a,!0,null!=b&&!0===b.hydrate)}
 (function(a){var b=a.findFiberByHostInstance;return Te(n({},a,{overrideProps:null,currentDispatcherRef:Tb.ReactCurrentDispatcher,findHostInstanceByFiber:function(a){a=hd(a);return null===a?null:a.stateNode},findFiberByHostInstance:function(a){return b?b(a):null}}))})({findFiberByHostInstance:Ha,bundleType:0,version:"16.8.6",rendererPackageName:"react-dom"});var Wi={default:Vi},Xi=Wi&&Vi||Wi;module.exports=Xi.default||Xi;
 
-},{"object-assign":1,"react":11,"scheduler":16}],7:[function(require,module,exports){
+},{"object-assign":1,"react":10,"scheduler":15}],7:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -21992,87 +21992,6 @@ if (process.env.NODE_ENV === 'production') {
 
 }).call(this,require('_process'))
 },{"./cjs/react-dom.development.js":5,"./cjs/react-dom.production.min.js":6,"_process":2}],8:[function(require,module,exports){
-"use strict";
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(require("react"));
-var object_assign_1 = __importDefault(require("object-assign"));
-var Iframe = function (_a) {
-    var url = _a.url, allowFullScreen = _a.allowFullScreen, position = _a.position, display = _a.display, height = _a.height, width = _a.width, overflow = _a.overflow, styles = _a.styles, onLoad = _a.onLoad, onMouseOver = _a.onMouseOver, onMouseOut = _a.onMouseOut, scrolling = _a.scrolling, id = _a.id, frameBorder = _a.frameBorder, ariaHidden = _a.ariaHidden, sandbox = _a.sandbox, allow = _a.allow, className = _a.className, title = _a.title, ariaLabel = _a.ariaLabel, ariaLabelledby = _a.ariaLabelledby, name = _a.name, target = _a.target, loading = _a.loading, importance = _a.importance, referrerpolicy = _a.referrerpolicy, allowpaymentrequest = _a.allowpaymentrequest, src = _a.src;
-    var defaultProps = object_assign_1.default({
-        src: src || url,
-        target: target || null,
-        style: {
-            position: position || null,
-            display: display || "block",
-            overflow: overflow || null
-        },
-        scrolling: scrolling || null,
-        allowpaymentrequest: allowpaymentrequest || null,
-        importance: importance || null,
-        sandbox: sandbox || null,
-        loading: loading || null,
-        styles: styles || null,
-        name: name || null,
-        className: className || null,
-        referrerpolicy: referrerpolicy || null,
-        title: title || null,
-        allow: allow || null,
-        id: id || null,
-        "aria-labelledby": ariaLabelledby || null,
-        "aria-hidden": ariaHidden || null,
-        "aria-label": ariaLabel || null,
-        width: width || null,
-        height: height || null,
-        onLoad: onLoad || null,
-        onMouseOver: onMouseOver || null,
-        onMouseOut: onMouseOut || null
-    });
-    var props = Object.create(null);
-    for (var _i = 0, _b = Object.keys(defaultProps); _i < _b.length; _i++) {
-        var prop = _b[_i];
-        if (defaultProps[prop] != null) {
-            props[prop] = defaultProps[prop];
-        }
-    }
-    for (var _c = 0, _d = Object.keys(props.style); _c < _d.length; _c++) {
-        var i = _d[_c];
-        if (props.style[i] == null) {
-            delete props.style[i];
-        }
-    }
-    if (allowFullScreen) {
-        if ("allow" in props) {
-            var currentAllow = props.allow.replace("fullscreen", "");
-            props.allow = ("fullscreen " + currentAllow.trim()).trim();
-        }
-        else {
-            props.allow = "fullscreen";
-        }
-    }
-    if (frameBorder >= 0) {
-        if (!props.style.hasOwnProperty("border")) {
-            props.style.border = frameBorder;
-        }
-    }
-    return react_1.default.createElement("iframe", __assign({}, props));
-};
-exports.default = Iframe;
-
-},{"object-assign":1,"react":11}],9:[function(require,module,exports){
 (function (process){
 /** @license React v16.8.6
  * react.development.js
@@ -23977,7 +23896,7 @@ module.exports = react;
 }
 
 }).call(this,require('_process'))
-},{"_process":2,"object-assign":1,"prop-types/checkPropTypes":3}],10:[function(require,module,exports){
+},{"_process":2,"object-assign":1,"prop-types/checkPropTypes":3}],9:[function(require,module,exports){
 /** @license React v16.8.6
  * react.production.min.js
  *
@@ -24004,7 +23923,7 @@ b,d){return W().useImperativeHandle(a,b,d)},useDebugValue:function(){},useLayout
 b){void 0!==b.ref&&(h=b.ref,f=J.current);void 0!==b.key&&(g=""+b.key);var l=void 0;a.type&&a.type.defaultProps&&(l=a.type.defaultProps);for(c in b)K.call(b,c)&&!L.hasOwnProperty(c)&&(e[c]=void 0===b[c]&&void 0!==l?l[c]:b[c])}c=arguments.length-2;if(1===c)e.children=d;else if(1<c){l=Array(c);for(var m=0;m<c;m++)l[m]=arguments[m+2];e.children=l}return{$$typeof:p,type:a.type,key:g,ref:h,props:e,_owner:f}},createFactory:function(a){var b=M.bind(null,a);b.type=a;return b},isValidElement:N,version:"16.8.6",
 unstable_ConcurrentMode:x,unstable_Profiler:u,__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED:{ReactCurrentDispatcher:I,ReactCurrentOwner:J,assign:k}},Y={default:X},Z=Y&&X||Y;module.exports=Z.default||Z;
 
-},{"object-assign":1}],11:[function(require,module,exports){
+},{"object-assign":1}],10:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -24015,7 +23934,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 }).call(this,require('_process'))
-},{"./cjs/react.development.js":9,"./cjs/react.production.min.js":10,"_process":2}],12:[function(require,module,exports){
+},{"./cjs/react.development.js":8,"./cjs/react.production.min.js":9,"_process":2}],11:[function(require,module,exports){
 (function (process){
 /** @license React v0.13.6
  * scheduler-tracing.development.js
@@ -24442,7 +24361,7 @@ exports.unstable_unsubscribe = unstable_unsubscribe;
 }
 
 }).call(this,require('_process'))
-},{"_process":2}],13:[function(require,module,exports){
+},{"_process":2}],12:[function(require,module,exports){
 /** @license React v0.13.6
  * scheduler-tracing.production.min.js
  *
@@ -24454,7 +24373,7 @@ exports.unstable_unsubscribe = unstable_unsubscribe;
 
 'use strict';Object.defineProperty(exports,"__esModule",{value:!0});var b=0;exports.__interactionsRef=null;exports.__subscriberRef=null;exports.unstable_clear=function(a){return a()};exports.unstable_getCurrent=function(){return null};exports.unstable_getThreadID=function(){return++b};exports.unstable_trace=function(a,d,c){return c()};exports.unstable_wrap=function(a){return a};exports.unstable_subscribe=function(){};exports.unstable_unsubscribe=function(){};
 
-},{}],14:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 (function (process,global){
 /** @license React v0.13.6
  * scheduler.development.js
@@ -25157,7 +25076,7 @@ exports.unstable_getFirstCallbackNode = unstable_getFirstCallbackNode;
 }
 
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"_process":2}],15:[function(require,module,exports){
+},{"_process":2}],14:[function(require,module,exports){
 (function (global){
 /** @license React v0.13.6
  * scheduler.production.min.js
@@ -25182,7 +25101,7 @@ b=c.previous;b.next=c.previous=a;a.next=c;a.previous=b}return a};exports.unstabl
 exports.unstable_shouldYield=function(){return!e&&(null!==d&&d.expirationTime<l||w())};exports.unstable_continueExecution=function(){null!==d&&p()};exports.unstable_pauseExecution=function(){};exports.unstable_getFirstCallbackNode=function(){return d};
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],16:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -25193,7 +25112,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 }).call(this,require('_process'))
-},{"./cjs/scheduler.development.js":14,"./cjs/scheduler.production.min.js":15,"_process":2}],17:[function(require,module,exports){
+},{"./cjs/scheduler.development.js":13,"./cjs/scheduler.production.min.js":14,"_process":2}],16:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -25204,7 +25123,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 }).call(this,require('_process'))
-},{"./cjs/scheduler-tracing.development.js":12,"./cjs/scheduler-tracing.production.min.js":13,"_process":2}],18:[function(require,module,exports){
+},{"./cjs/scheduler-tracing.development.js":11,"./cjs/scheduler-tracing.production.min.js":12,"_process":2}],17:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25217,8 +25136,6 @@ var _react = _interopRequireWildcard(require("react"));
 var _HomeCard = _interopRequireDefault(require("./component/HomeCard"));
 
 var _ListContainer = _interopRequireDefault(require("./component/ListContainer"));
-
-var _reactIframe = _interopRequireDefault(require("react-iframe"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -25302,7 +25219,6 @@ function (_Component) {
     key: "render",
     value: function render() {
       return _react["default"].createElement("div", {
-        className: "row",
         style: {
           display: 'inline-block',
           width: 'auto',
@@ -25323,7 +25239,7 @@ function (_Component) {
 var _default = App;
 exports["default"] = _default;
 
-},{"./component/HomeCard":21,"./component/ListContainer":23,"react":11,"react-iframe":8}],19:[function(require,module,exports){
+},{"./component/HomeCard":20,"./component/ListContainer":22,"react":10}],18:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25374,6 +25290,7 @@ function (_Component) {
     key: "render",
     value: function render() {
       var value;
+      var highlightedLineClassExtension = '';
       var urlRegex = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
 
       if (this.state.valueString.match(urlRegex) != null) {
@@ -25388,10 +25305,16 @@ function (_Component) {
         value = this.state.valueString;
       }
 
+      if (value.toString().includes('HIGHLIGHTEDCELL')) {
+        highlightedLineClassExtension = 'grey darken-2';
+        value = value.replace('HIGHLIGHTEDCELL', '');
+      }
+
       return _react["default"].createElement("td", {
         style: {
           padding: '10px'
-        }
+        },
+        className: highlightedLineClassExtension
       }, value);
     }
   }]);
@@ -25402,7 +25325,7 @@ function (_Component) {
 var _default = Header;
 exports["default"] = _default;
 
-},{"react":11}],20:[function(require,module,exports){
+},{"react":10}],19:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25448,7 +25371,8 @@ function (_Component) {
     value: function render() {
       return _react["default"].createElement("th", {
         style: {
-          padding: '10px'
+          padding: '10px',
+          borderRadius: '0px'
         }
       }, " ", this.props.data.value, " ");
     }
@@ -25460,7 +25384,7 @@ function (_Component) {
 var _default = Header;
 exports["default"] = _default;
 
-},{"react":11}],21:[function(require,module,exports){
+},{"react":10}],20:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25524,7 +25448,7 @@ function (_Component) {
 var _default = HomeCard;
 exports["default"] = _default;
 
-},{"react":11}],22:[function(require,module,exports){
+},{"react":10}],21:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25615,6 +25539,9 @@ function (_Component) {
     key: "render",
     value: function render() {
       var sheet;
+      var shadowStyle = {
+        boxShadow: '0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2)'
+      };
 
       if (!this.state.fetchState) {
         sheet = _react["default"].createElement("div", {
@@ -25631,7 +25558,9 @@ function (_Component) {
           }
         }, _react["default"].createElement("table", {
           className: "highlight"
-        }, _react["default"].createElement("thead", null, _react["default"].createElement("tr", {
+        }, _react["default"].createElement("thead", {
+          style: shadowStyle
+        }, _react["default"].createElement("tr", {
           className: this.state.color
         }, this.state.data.headers.map(function (header, i) {
           return _react["default"].createElement(_Header["default"], {
@@ -25702,7 +25631,7 @@ function (_Component) {
 var _default = List;
 exports["default"] = _default;
 
-},{"./Cell":19,"./Header":20,"react":11}],23:[function(require,module,exports){
+},{"./Cell":18,"./Header":19,"react":10}],22:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25753,14 +25682,14 @@ function (_Component) {
     _defineProperty(_assertThisInitialized(_this), "setScrollspyVisibility", function () {
       if (window.innerWidth > _this.state.displayChange) {
         _this.setState({
-          display: 'block',
-          containerSize: 'l10',
+          display: 'inline-block',
+          containerSize: '82%',
           isScrollspyVisible: true
         });
       } else {
         _this.setState({
           display: 'none',
-          containerSize: 'l12',
+          containerSize: '100%',
           isScrollspyVisible: false
         });
       }
@@ -25843,11 +25772,15 @@ function (_Component) {
         }
       };
       return _react["default"].createElement(_react["default"].Fragment, null, _react["default"].createElement("ul", {
-        className: "collapsible expandable col s12 m12 ".concat(this.state.containerSize),
+        className: "collapsible expandable",
         style: {
           boxShadow: 'none',
           color: 'white',
-          border: '0'
+          border: '0',
+          borderRadius: '7px',
+          overflow: 'hidden',
+          width: this.state.containerSize,
+          display: 'inline-block'
         }
       }, Object.keys(worksheetNamesAndRanges).map(function (worksheetName, i) {
         var workSheet = worksheetNamesAndRanges[worksheetName];
@@ -25861,10 +25794,12 @@ function (_Component) {
           displayChange: _this2.state.displayChange
         });
       })), _react["default"].createElement("div", {
-        className: "col l2 toc-wrapper pinned",
+        className: "toc-wrapper pinned",
         style: {
           right: '5px',
-          display: this.state.display
+          display: this.state.display,
+          width: '18%',
+          padding: '10px'
         }
       }, _react["default"].createElement("ul", {
         className: "section table-of-contents"
@@ -25891,7 +25826,7 @@ function (_Component) {
 var _default = ListContainer;
 exports["default"] = _default;
 
-},{"./List":22,"react":11}],24:[function(require,module,exports){
+},{"./List":21,"react":10}],23:[function(require,module,exports){
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -25913,7 +25848,7 @@ _reactDom["default"].render(_react["default"].createElement(_App["default"], nul
 
 serviceWorker.unregister();
 
-},{"./App":18,"./serviceWorker":25,"react":11,"react-dom":7}],25:[function(require,module,exports){
+},{"./App":17,"./serviceWorker":24,"react":10,"react-dom":7}],24:[function(require,module,exports){
 (function (process){
 "use strict";
 
@@ -26035,4 +25970,4 @@ function unregister() {
 }
 
 }).call(this,require('_process'))
-},{"_process":2}]},{},[24]);
+},{"_process":2}]},{},[23]);

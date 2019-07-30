@@ -16,9 +16,9 @@ class ListContainer extends Component {
 
     setScrollspyVisibility = () => {
         if (window.innerWidth > this.state.displayChange) {
-            this.setState({ display: 'block', containerSize: 'l10', isScrollspyVisible: true });
+            this.setState({ display: 'inline-block', containerSize: '82%', isScrollspyVisible: true });
         } else {
-            this.setState({ display: 'none', containerSize: 'l12', isScrollspyVisible: false });
+            this.setState({ display: 'none', containerSize: '100%', isScrollspyVisible: false });
         }
     }
 
@@ -76,8 +76,9 @@ class ListContainer extends Component {
 
         return (
         <React.Fragment>
-            <ul className={`collapsible expandable col s12 m12 ${this.state.containerSize}`}
-            style={{ boxShadow: 'none' , color: 'white', border: '0' }}>
+            <ul className='collapsible expandable'
+            style={{ boxShadow: 'none' , color: 'white', border: '0', borderRadius: '7px', overflow: 'hidden',
+            width: this.state.containerSize, display: 'inline-block' }}>
                 {Object.keys(worksheetNamesAndRanges).map((worksheetName, i) => {
                     let workSheet = worksheetNamesAndRanges[worksheetName];
                     return (
@@ -87,7 +88,8 @@ class ListContainer extends Component {
                     )
                 })}
             </ul>
-            <div className="col l2 toc-wrapper pinned" style={{ right: '5px' , display: this.state.display }}>
+            <div className="toc-wrapper pinned" style={{ right: '5px' , display: this.state.display,
+            width: '18%', padding: '10px' }}>
               <ul className="section table-of-contents">
                 {Object.keys(worksheetNamesAndRanges).map((worksheetName, i) => {
                 let workSheet = worksheetNamesAndRanges[worksheetName];

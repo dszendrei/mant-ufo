@@ -12,6 +12,7 @@ class Header extends Component {
 
     render() {
         let value;
+        let highlightedLineClassExtension = '';
 
         let urlRegex =/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
 
@@ -21,8 +22,13 @@ class Header extends Component {
             value = this.state.valueString
         }
 
+        if (value.toString().includes('HIGHLIGHTEDCELL')) {
+            highlightedLineClassExtension = 'grey darken-2';
+            value = value.replace('HIGHLIGHTEDCELL', '');
+        }
+
         return (
-            <td style={{ padding: '10px' }}>
+            <td style={{ padding: '10px' }} className={highlightedLineClassExtension}>
                 { value }
             </td>
         )

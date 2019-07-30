@@ -41,6 +41,8 @@ class List extends Component {
     render() {
         let sheet;
 
+        let shadowStyle = { boxShadow: '0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2)' }
+
         if (!this.state.fetchState) {
             sheet = <div className="collapsible-body">Loading...</div>
         } else {
@@ -48,7 +50,7 @@ class List extends Component {
                 <div className="collapsible-body" style={{ backgroundColor: 'grey' , borderColor: 'black' ,
                                                             fontSize: '70%', padding: '4px' }}>
                     <table className="highlight">
-                        <thead>
+                        <thead style={shadowStyle}>
                             <tr className={this.state.color}>
                                 {this.state.data.headers.map((header, i) =>
                                     <Header key={i + "_header"} data={header}>{header}</Header>
