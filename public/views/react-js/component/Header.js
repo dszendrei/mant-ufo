@@ -9,7 +9,7 @@ class Header extends Component {
     render() {
 
         return (
-            <th style={{ padding: '10px', borderRadius: '0px' }}> {this.props.data.value} </th>
+            <th style={{ padding: '10px', borderRadius: '0px' }}> {this.props.value} </th>
         )
     }
 }

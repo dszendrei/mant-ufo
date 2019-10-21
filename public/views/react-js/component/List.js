@@ -15,6 +15,7 @@ class List extends Component {
             range: props.range,
             displayChange: props.displayChange,
             data: {
+                _id: [],
                 sheetName: '',
                 headers: [],
                 listOfRows: []
@@ -24,11 +25,11 @@ class List extends Component {
     }
 
     componentDidMount() {
-        //fetch('http://localhost:8080/lists/' + this.state.worksheetName + '/' + this.state.range)
-        fetch('https://mantufo-lists.herokuapp.com/lists/' + this.state.worksheetName + '/' + this.state.range)
+        fetch('http://localhost:8080/listsdb/' + this.state.worksheetName + '/' + this.state.range)
+        //fetch('https://mantufo-lists.herokuapp.com/lists/' + this.state.worksheetName + '/' + this.state.range)
             .then(response => response.json())
             .then(data => {
-                this.setState({ data })
+                this.setState({ data });
             });
     }
 
@@ -53,16 +54,16 @@ class List extends Component {
                         <thead style={shadowStyle}>
                             <tr className={this.state.color}>
                                 {this.state.data.headers.map((header, i) =>
-                                    <Header key={i + "_header"} data={header}>{header}</Header>
+                                    <Header key={i + "_header"} value={header}></Header>
                                 )}
                             </tr>
                         </thead>
                         <tbody>
-                            {this.state.data.listOfRows.map((row) =>
-                                <tr key={row.index + "_row"}>
-                                    {row.listOfCells.map((cell) =>
-                                        <Cell key={row.index + "_" + cell.coordinate.sheetsFormattedCoordinate}
-                                            data={cell}>{cell}</Cell>
+                            {Object.keys(this.state.data.listOfRows).map((row, i) => 
+                                <tr key={row + "_row"}>
+                                    {Object.keys(this.state.data.listOfRows[row]).map((cell, i) =>
+                                        <Cell key={cell}
+                                        value={this.state.data.listOfRows[row][cell]}></Cell>
                                     )}
                                 </tr>
                             )}

@@ -6,7 +6,7 @@ class Header extends Component {
         super(props);
 
         this.state = {
-            valueString: this.props.data.value
+            valueString: this.props.value
         }
     }
 

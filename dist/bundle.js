@@ -25281,7 +25281,7 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Header).call(this, props));
     _this.state = {
-      valueString: _this.props.data.value
+      valueString: _this.props.value
     };
     return _this;
   }
@@ -25374,7 +25374,7 @@ function (_Component) {
           padding: '10px',
           borderRadius: '0px'
         }
-      }, " ", this.props.data.value, " ");
+      }, " ", this.props.value, " ");
     }
   }]);
 
@@ -25503,6 +25503,7 @@ function (_Component) {
       range: props.range,
       displayChange: props.displayChange,
       data: {
+        _id: [],
         sheetName: '',
         headers: [],
         listOfRows: []
@@ -25517,8 +25518,8 @@ function (_Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      //fetch('http://localhost:8080/lists/' + this.state.worksheetName + '/' + this.state.range)
-      fetch('https://mantufo-lists.herokuapp.com/lists/' + this.state.worksheetName + '/' + this.state.range).then(function (response) {
+      fetch('http://localhost:8080/listsdb/' + this.state.worksheetName + '/' + this.state.range) //fetch('https://mantufo-lists.herokuapp.com/lists/' + this.state.worksheetName + '/' + this.state.range)
+      .then(function (response) {
         return response.json();
       }).then(function (data) {
         _this2.setState({
@@ -25538,6 +25539,8 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this3 = this;
+
       var sheet;
       var shadowStyle = {
         boxShadow: '0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2)'
@@ -25565,16 +25568,16 @@ function (_Component) {
         }, this.state.data.headers.map(function (header, i) {
           return _react["default"].createElement(_Header["default"], {
             key: i + "_header",
-            data: header
-          }, header);
-        }))), _react["default"].createElement("tbody", null, this.state.data.listOfRows.map(function (row) {
+            value: header
+          });
+        }))), _react["default"].createElement("tbody", null, Object.keys(this.state.data.listOfRows).map(function (row, i) {
           return _react["default"].createElement("tr", {
-            key: row.index + "_row"
-          }, row.listOfCells.map(function (cell) {
+            key: row + "_row"
+          }, Object.keys(_this3.state.data.listOfRows[row]).map(function (cell, i) {
             return _react["default"].createElement(_Cell["default"], {
-              key: row.index + "_" + cell.coordinate.sheetsFormattedCoordinate,
-              data: cell
-            }, cell);
+              key: cell,
+              value: _this3.state.data.listOfRows[row][cell]
+            });
           }));
         }))));
       }
