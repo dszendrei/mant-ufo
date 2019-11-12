@@ -25,7 +25,7 @@ class List extends Component {
     }
 
     componentDidMount() {
-        //fetch('http://localhost:8080/listsdb/' + this.state.worksheetName)
+        //fetch('http://127.0.0.1:8080/listsdb/' + this.state.worksheetName)
         fetch('https://mantufo-lists.herokuapp.com/listsdb/' + this.state.worksheetName)
             .then(response => response.json())
             .then(data => {
