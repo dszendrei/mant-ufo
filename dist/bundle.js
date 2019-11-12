@@ -25518,7 +25518,7 @@ function (_Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      fetch('http://localhost:8080/listsdb/' + this.state.worksheetName + '/' + this.state.range) //fetch('https://mantufo-lists.herokuapp.com/lists/' + this.state.worksheetName + '/' + this.state.range)
+      fetch('http://localhost:8080/listsdb/' + this.state.worksheetName) //fetch('https://mantufo-lists.herokuapp.com/lists/' + this.state.worksheetName + '/' + this.state.range)
       .then(function (response) {
         return response.json();
       }).then(function (data) {
@@ -25727,49 +25727,41 @@ function (_Component) {
       var worksheetNamesAndRanges = {
         tantargyak_itthon: {
           name: "Tantárgyak itthon",
-          range: "A1:G100",
           color: "yellow darken-3",
           icon: "perm_media"
         },
         szakok: {
           name: "Szakok",
-          range: "A1:G100",
           color: "green lighten-1",
           icon: "school"
         },
         versenyek: {
           name: "Versenyek",
-          range: "A1:G100",
           color: "lime darken-2",
           icon: "colorize"
         },
         europai_diplomak: {
           name: "Európai diplomák",
-          range: "A1:G100",
           color: "light-green darken-1",
           icon: "perm_media"
         },
         esemenyek: {
           name: "Események, MOOC",
-          range: "A1:G100",
           color: "blue-grey darken-1",
           icon: "calendar_today"
         },
         kutatocsoportok_es_cegek: {
           name: "Kutatócsoportok és cégek",
-          range: "A1:G100",
           color: "cyan darken-2",
           icon: "how_to_reg"
         },
         partnerek: {
           name: "Partnerek",
-          range: "A1:G100",
           color: "red accent-2",
           icon: "description"
         },
         eddigi_megjeleneseink: {
           name: "Eddigi megjelenéseink",
-          range: "A1:G100",
           color: "teal darken-1",
           icon: "face"
         }
