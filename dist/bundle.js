@@ -25518,7 +25518,7 @@ function (_Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      fetch('http://localhost:8080/listsdb/' + this.state.worksheetName) //fetch('https://mantufo-lists.herokuapp.com/lists/' + this.state.worksheetName + '/' + this.state.range)
+      fetch('http://localhost:8080/listsdb/' + this.state.worksheetName) //fetch('https://mantufo-lists.herokuapp.com/lists/' + this.state.worksheetName)
       .then(function (response) {
         return response.json();
       }).then(function (data) {
